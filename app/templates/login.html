@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/login.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <section class="containerLogin">
+        <h1 class="title">Olá, faça o login para entrar!</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="formUser">
+            <p>Nome de usuário: </p> 
+                {{ form.username }}   
+                {{ form.username.errors }}
+            </div>
+            <div class="formPass">
+            <p>Senha: </p> 
+                {{ form.password }}   
+                {{ form.password.errors }}
+            </div>
+            <div class="btns"> 
+                <button class="loginBtn" type="submit">Login</button>
+                <button class="registerBtn"> <a href="{% url 'register' %}">Registrar</a></button>
+            </div>
+        </form>
+
+    </section>
+</body>
+</html>

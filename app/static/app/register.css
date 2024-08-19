@@ -1,0 +1,89 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: grid;
+    place-items: center;
+}
+
+body {
+    font-family: Arial;
+    width: 50%;
+    height: auto; /* Deixe a altura do conteúdo determinar a altura do body */
+    border-radius: 5px;
+    border: solid 2px #000;
+    padding: 15px; /* Use padding em vez de margin para evitar interferir na centralização */
+    box-sizing: border-box; /* Inclui borda e padding dentro da largura */
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.title{
+    text-align: center;
+    justify-content: center;
+}
+
+.containerLogin{
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], input[type="password"]{
+    width: 250px;
+    height: 25px;
+    padding: 1px;
+    border-radius: 5px;
+    outline: none;
+    border: solid 1px #000;
+}
+
+.formPassOne{
+    margin-left: -3px;
+}
+
+.formUser, .formPassOne, .formPassTwo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.formUser p, .formPassOne p, .formPassTwo p{
+    margin-bottom: 0;
+}
+
+ul{
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.passRules li{
+    font-size: 10px;
+    text-align: justify;
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+}
+
+.loginBtn, .registerBtn{
+    width: 100px;
+    height: 23px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    border: solid 1px #000;
+    margin-bottom: 100px;
+    margin-top: 20px;
+}
+
+.loginBtn:hover, .registerBtn:hover{
+    scale: 1.07;
+    transition: .3s;
+    opacity: 70%;
+}

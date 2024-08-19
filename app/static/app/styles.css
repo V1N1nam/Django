@@ -1,0 +1,65 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: grid;
+    place-items: center;
+}
+
+body {
+    font-family: Arial;
+    width: 50%;
+    height: auto; /* Deixe a altura do conteúdo determinar a altura do body */
+    border-radius: 5px;
+    border: solid 2px #000;
+    padding: 15px; /* Use padding em vez de margin para evitar interferir na centralização */
+    box-sizing: border-box; /* Inclui borda e padding dentro da largura */
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.containerLogin{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.loginMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginInput, .passInput{
+    width: 250px;
+    height: 25px;
+    padding: 1px;
+    margin: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: solid 1px #000;
+}
+
+.btns{
+    display: flex;
+}
+
+.loginBtn, .registerBtn{
+    width: 100px;
+    height: 23px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    border: solid 1px #000;
+}
+
+.loginBtn:hover, .registerBtn:hover{
+    scale: 1.07;
+    transition: .3s;
+    opacity: 70%;
+}
