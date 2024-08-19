@@ -9,5 +9,5 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),  # URL para login
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),  # URL para logout
     path('register/', views.register, name='register'),  # URL para registro de novos usuários
-    path('principal/', views.principal_view, name='principal'),
+    path('main/', views.principal_view, name='main'),
 ]
