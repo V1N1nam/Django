@@ -23,10 +23,10 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('principal')
+            return redirect('main')
     else:
         form = CustomAuthenticationForm()
     return render(request, 'login.html', {'form': form})
 
 def principal_view(request):
-    return render(request, 'principal.html')
+    return render(request, 'main.html')

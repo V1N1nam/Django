@@ -1,0 +1,29 @@
+{% extends 'layout.html'%}
+{% load static %}
+
+{% block title %}
+    Entrou
+{% endblock %}
+
+{% block content %}
+<div class="mainContainer">
+    <div class="imgUser">
+        <img class="imgUser" src="{% static 'app/img/user.jpg' %}" alt="">
+    </div>
+    <div class="infoUser">
+        <p>Nome: <span>Paulo</span></p>
+        <p>Cargo: <span>Aprendiz</span></p>
+        <p>Data de nascimento: <span>12/04/2004</span></p>
+    </div>
+    <ul class="skills">
+        <li>Lider</li>
+        <li>Equipe</li>
+        <li>Bom</li>
+        <li>Veloz</li>
+    </ul>
+</div>
+<div class="actions">
+    <button class="deleteBtn">Remover</button>
+    <button class="editBtn">Editar</button>
+</div>
+{% endblock %}
