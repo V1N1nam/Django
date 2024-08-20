@@ -60,7 +60,7 @@ html, body {
     justify-content: space-around;
 }
 
-.editBtn,.deleteBtn{
+.editBtn,.deleteBtn,.selectBtn{
     cursor: pointer;
     border: none;
     padding: 6px 10px;
@@ -76,7 +76,11 @@ html, body {
     background-color: #b22222a9;
 }
 
-.editBtn:hover,.deleteBtn:hover{
+.selectBtn{
+    background-color: #228b22a9;
+}
+
+.editBtn:hover,.deleteBtn:hover, .selectBtn:hover{
     scale: 1.07;
     transition: .3s;
     opacity: 90%;
