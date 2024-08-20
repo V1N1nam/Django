@@ -20,6 +20,16 @@ a{
     color: #000;
 }
 
+.imgLogo{
+    border-radius: 5px;
+    padding: 7px;
+    width: 30%;
+}
+
+.imgLogo span{
+    text-decoration: underline;
+}
+
 .containerLogin{
     display: flex;
     flex-direction: column;
