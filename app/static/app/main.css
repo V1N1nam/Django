@@ -68,6 +68,14 @@ html, body {
     font-size: 25px;
 }
 
+.editBtn,.deleteBtn,.selectBtn{
+    cursor: pointer;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 25px;
+}
+
 .editBtn{
     background-color: #6494ed99;
 }
