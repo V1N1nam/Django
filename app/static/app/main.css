@@ -80,7 +80,7 @@ html, body {
     background-color: #228b22a9;
 }
 
-.editBtn:hover,.deleteBtn:hover,.selectBtn:hover{
+.editBtn:hover,.deleteBtn:hover, .selectBtn:hover{
     scale: 1.07;
     transition: .3s;
     opacity: 90%;
