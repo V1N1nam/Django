@@ -9,15 +9,16 @@
             Django App
         {% endblock %}
     </title>
-    <link rel="stylesheet" href="{% static 'app/main.css' %}">
     <script src="{% static 'js/main.js' %}" defer></script>
 </head>
 <body>
-    <nav class="header">
-        <a href="/">🏠</a> |
-        <a href="/about">😀</a> |
-        <a href="/posts">📰.</a> |
-    </nav>
+    {% block header %}
+        <nav class="header">
+            <a href="/">🏠</a> |
+            <a href="/about">😀</a> |
+            <a href="/posts">📰</a> |
+        </nav>
+    {% endblock %}
     <main>
         {% block content %}
         {% endblock %}

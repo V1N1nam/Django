@@ -20,6 +20,16 @@ a{
     color: #000;
 }
 
+.imgLogo{
+    border-radius: 5px;
+    padding: 7px;
+    width: 40%;
+}
+
+.imgLogo span{
+    text-decoration: underline;
+}
+
 .title{
     text-align: center;
     justify-content: center;
@@ -53,7 +63,7 @@ input[type="text"], input[type="password"]{
     border-radius: 5px;
     cursor: pointer;
     outline: none;
-    border: solid 1px #000;
+    border: solid 1px #ff0000;
     margin-bottom: 100px;
     margin-top: 20px;
 }
