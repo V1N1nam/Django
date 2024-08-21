@@ -4,19 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'app/img/favicon/letra-b.png' %}" type="image/x-icon">
     <title>
         {% block title %}
             Django App
         {% endblock %}
     </title>
-    <script src="{% static 'js/main.js' %}" defer></script>
 </head>
 <body>
     {% block header %}
         <nav class="header">
-            <a href="/">🏠</a> |
-            <a href="/about">📓</a> |
-            <a href="/posts">📰</a> |
+            <a href="/">Home</a>
         </nav>
     {% endblock %}
     <main>
