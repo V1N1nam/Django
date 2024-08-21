@@ -13,8 +13,9 @@
         <link rel="stylesheet" href="{% static 'app/css/index.css' %}">
         <img class="imgLogo" src="{% static 'app/img/brose_logo_com.svg' %}" alt="">
         <h1>Bem vindo a pagina de Login!</h1>
-        <button class="loginBtn"><a href="{% url 'login' %}">Login</a></button>
-        <button class="registerBtn"><a href="{% url 'register' %}">Registrar</a></button>
+        <button class="loginBtn" onclick="window.location.href='{% url 'login' %}'">Login</button>
+        <button class="registerBtn" onclick="window.location.href='{% url 'register' %}'">Registrar</button>
+
     </div>
     <script src="{% static 'app/js/index.js' %}"></script>
 {% endblock %}
