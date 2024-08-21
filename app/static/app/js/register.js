@@ -1,1 +1,1 @@
-console.log('import de javascript esta funcionando');
+console.log('register.js');
