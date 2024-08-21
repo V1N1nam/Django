@@ -1,16 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'app/styles.css' %}">
-    <title>Home</title>
-</head>
-<body>
-    <img class="imgLogo" src="{% static 'app/img/brose_logo_com.svg' %}" alt="">
-    <h1>Bem vindo a pagina de Login!</h1>
-    <button class="loginBtn"><a href="{% url 'login' %}">Login</a></button>
-    <button class="registerBtn"><a href="{% url 'register' %}">Registrar</a></button>
-</body>
-</html>
+{% extends 'layout.html'%}
+{% load static %}
+
+{% block header %}
+{% endblock %}
+
+{% block title %}
+    Bem vindo!
+{% endblock %}
+
+{% block content %}
+    <div class="indexContainer">
+        <link rel="stylesheet" href="{% static 'app/styles.css' %}">
+        <img class="imgLogo" src="{% static 'app/img/brose_logo_com.svg' %}" alt="">
+        <h1>Bem vindo a pagina de Login!</h1>
+        <button class="loginBtn"><a href="{% url 'login' %}">Login</a></button>
+        <button class="registerBtn"><a href="{% url 'register' %}">Registrar</a></button>
+    </div>
+{% endblock %}
+
+
+
+
+
