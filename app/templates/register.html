@@ -9,8 +9,11 @@
 {% endblock %}
 
 {% block content %}
-    <link rel="stylesheet" href="{% static 'app/register.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/register.css' %}">
     <section class="containerLogin">
+        <div class="imgLogo">
+            <img class="imgLogo" src="{% static 'app/img/brose_logo_com.svg' %}" alt="">
+        </div>
         <h1 class="title">Registrar novo Usuário!</h1>
         <form method="post">
             {% csrf_token %}
@@ -45,7 +48,7 @@
             </div>
         </form>
     </section>
-    
+
     <script id="errors-json" type="application/json">{{ errors_json|safe }}</script>
-    <script src="{% static 'app/register.js' %}" defer></script>
+    <script src="{% static 'app/js/register.js' %}"></script>
 {% endblock %}
