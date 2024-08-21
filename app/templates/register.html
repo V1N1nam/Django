@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'app/register.css' %}">
-    <title>Register</title>
+{% extends 'layout.html' %}
+{% load static %}
 
-</head>
-<body>
+{% block title %}
+    Registre-se
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'app/register.css' %}">
     <section class="containerLogin">
         <h1 class="title">Registrar novo Usuário!</h1>
         <form method="post">
@@ -43,11 +44,8 @@
             <button class="loginBtn"><a href="{% url 'login' %}">Login</a></button>
             </div>
         </form>
-
     </section>
-
+    
     <script id="errors-json" type="application/json">{{ errors_json|safe }}</script>
     <script src="{% static 'app/register.js' %}" defer></script>
-
-</body>
-</html>
+{% endblock %}
