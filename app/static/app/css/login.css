@@ -20,10 +20,22 @@ a{
     color: #000;
 }
 
+.containerLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgLogo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .imgLogo{
     border-radius: 5px;
     padding: 7px;
-    width: 100%;
+    width: 80%;
 }
 
 .imgLogo span{
