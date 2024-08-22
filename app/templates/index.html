@@ -9,6 +9,7 @@
 {% endblock %}
 
 {% block content %}
+    <button style="border-radius: 50%; border: solid 3px red;" class="darkthemeButton"><img style="width: 50px;" src="{% static 'app/img/favicon/brose-favicon.png' %}" alt=""></button>
     <div class="indexContainer">
         <div class="subIndexContainer">
             <link rel="stylesheet" href="{% static 'app/css/index.css' %}">
@@ -33,10 +34,10 @@
                     Sign up
                 </button>
             </div>
-
         </div>
-    </div> 
+    </div>
     <script src="{% static 'app/js/index.js' %}"></script>
+    <script src="{% static 'app/js/darktheme.js' %}"></script>
 {% endblock %}
 
 
