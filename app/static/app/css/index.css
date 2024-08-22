@@ -55,7 +55,7 @@ a{
     border-radius: 0 5px 5px 0;
     padding: 15px; /* Use padding em vez de margin para evitar interferir na centralização */
     box-sizing: border-box; /* Inclui borda e padding dentro da largura */
-    background-image: linear-gradient(100deg, rgb(192, 48, 48), rgb(236, 43, 75));
+    background-image: linear-gradient(to top, rgb(182, 37, 37), rgb(236, 43, 75));
 }
 
 .signupContainer{
@@ -125,7 +125,7 @@ a{
 }
 
 .signinBtn{
-    background-image: linear-gradient(100deg, rgb(192, 48, 48), rgb(236, 43, 75));
+    background-image: linear-gradient(to top, rgb(182, 37, 37), rgb(236, 43, 75));
     border: none;
     width: 300px;
 }
