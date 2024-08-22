@@ -28,6 +28,10 @@ function changeTheme(switchToggle) {
             element.style.color = 'black';
         });
 
+        document.querySelectorAll('.signinBtn').forEach(element => {
+            element.style.color = 'black';
+        });
+
         document.querySelectorAll('.signupBtn').forEach(element => {
             element.style.color = 'black';
             element.style.border = '2px solid black';
@@ -51,6 +55,10 @@ function changeTheme(switchToggle) {
             element.style.color = 'white';
         });
 
+        document.querySelectorAll('.signinBtn').forEach(element => {
+            element.style.color = 'white';
+        });
+        
         document.querySelectorAll('.signupBtn').forEach(element => {
             element.style.color = 'white';
             element.style.border = '2px solid white';
