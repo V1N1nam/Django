@@ -1,3 +1,7 @@
+html{
+    background-image: linear-gradient(to right, rgb(235, 235, 235), rgb(225, 233, 241));
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -5,16 +9,12 @@ html, body {
     flex-direction: column;
     justify-content: center;
     place-items: center;
+    font-family: Calibri;
 }
 
 body {
-    font-family: Arial;
-    width: 50%;
-    height: auto; /* Deixe a altura do conteúdo determinar a altura do body */
-    border-radius: 5px;
-    border: solid 2px #000;
-    padding: 15px; /* Use padding em vez de margin para evitar interferir na centralização */
-    box-sizing: border-box; /* Inclui borda e padding dentro da largura */
+    display: flex;
+    flex-direction: row;
 }
 
 a{
@@ -24,14 +24,72 @@ a{
 
 .indexContainer{
     display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.subIndexContainer{
+    display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 30px;
+    width: 550px;
+    height: 600px; /* Deixe a altura do conteúdo determinar a altura do body */
+    border-radius: 5px 0 0 5px;
+    padding: 15px; /* Use padding em vez de margin para evitar interferir na centralização */
+    box-sizing: border-box; /* Inclui borda e padding dentro da largura */
+    background-color: white;
+}
+
+.titleLeft{
+    color:rgb(160, 0, 0);
+    font-size: 30px;
+}
+
+.subIndexContainer2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 550px;
+    height: 600px; /* Deixe a altura do conteúdo determinar a altura do body */
+    border-radius: 0 5px 5px 0;
+    padding: 15px; /* Use padding em vez de margin para evitar interferir na centralização */
+    box-sizing: border-box; /* Inclui borda e padding dentro da largura */
+    background-image: linear-gradient(100deg, rgb(192, 48, 48), rgb(236, 43, 75));
+}
+
+.signupContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.titleRight{
+    font-size: 38px;
+    margin: 0 0 0px 0;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.subTitleRight{
+    color: white;
+    font-size: 30px;
+}
+
+.titleButtonsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
 }
 
 .imgLogo{
     border-radius: 5px;
     padding: 7px;
-    width: 30%;
+    width: 50%;
+    margin-top: 30px;
 }
 
 .imgLogo span{
@@ -66,18 +124,29 @@ a{
     display: flex;
 }
 
-.loginBtn, .registerBtn{
-    width: 100px;
-    height: 23px;
-    margin: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
-    border: solid 1px #000;
+.signinBtn{
+    background-image: linear-gradient(100deg, rgb(192, 48, 48), rgb(236, 43, 75));
+    border: none;
+    width: 300px;
 }
 
-.loginBtn:hover, .registerBtn:hover{
-    scale: 1.07;
+.signupBtn{
+    background-color: transparent;
+    border: solid 2px white;
+    width: 160px;
+    font-size: 2px;
+}
+
+.signinBtn, .signupBtn{
+    height: 60px;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-size: 20px;
+}
+
+.signinBtn:hover, .signupBtn:hover{
     transition: .3s;
-    opacity: 70%;
+    opacity: 80%;
 }
