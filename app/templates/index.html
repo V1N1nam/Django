@@ -13,15 +13,24 @@
         <div class="subIndexContainer">
             <link rel="stylesheet" href="{% static 'app/css/index.css' %}">
             <img class="imgLogo" src="{% static 'app/img/brose_logo_com.svg' %}" alt="">
-            <p class="titleLeft">Outra coisa</p>
+            <p class="titleLeft">
+                Outra coisa
+            </p>
             <div class="titleButtonsContainer">
-                <button class="signinBtn" onclick="window.location.href='{% url 'login' %}'">Sign in</button>
+                <button class="signinBtn" onclick="window.location.href='{% url 'login' %}'">
+                    Sign in
+                </button>
             </div>
         </div>
         <div class="subIndexContainer2">
-            <p class="titleRight">Bem vindo a página de login</p>
-            <button class="registerBtn" onclick="window.location.href='{% url 'register' %}'">Sign up
-            </button>
+            <div class="signupContainer">
+                <p class="titleRight">Bem vindo a página de login</p>
+                <p class="subTitleRight">Não está registrado?</p>
+                <button class="signupBtn" onclick="window.location.href='{% url 'register' %}'">
+                    Sign up
+                </button>
+            </div>
+
         </div>
     </div> 
     <script src="{% static 'app/js/index.js' %}"></script>
