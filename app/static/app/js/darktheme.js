@@ -23,6 +23,15 @@ function changeTheme(switchToggle) {
         document.querySelectorAll('.subIndexContainer').forEach(element => {
             element.style.backgroundColor = 'black';
         });
+
+        document.querySelectorAll('.subTitleRight').forEach(element => {
+            element.style.color = 'black';
+        });
+
+        document.querySelectorAll('.signupBtn').forEach(element => {
+            element.style.color = 'black';
+            element.style.border = '2px solid black';
+        });
     }
 
     else {
@@ -36,6 +45,15 @@ function changeTheme(switchToggle) {
 
         document.querySelectorAll('.subIndexContainer').forEach(element => {
             element.style.backgroundColor = 'white';
+        });
+
+        document.querySelectorAll('.subTitleRight').forEach(element => {
+            element.style.color = 'white';
+        });
+
+        document.querySelectorAll('.signupBtn').forEach(element => {
+            element.style.color = 'white';
+            element.style.border = '2px solid white';
         });
     }
 }
