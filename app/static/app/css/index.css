@@ -39,12 +39,27 @@ a{
     border-radius: 5px 0 0 5px;
     padding: 15px; /* Use padding em vez de margin para evitar interferir na centralização */
     box-sizing: border-box; /* Inclui borda e padding dentro da largura */
-    background-color: transparent;
+    background-color: white;
 }
 
-.titleLeft{
-    color:rgb(160, 0, 0);
-    font-size: 30px;
+.containerForm{
+    text-align: center;
+}
+
+.containerForm p{
+    margin: 18px 0 0 0;
+    font-weight: bold;
+    font-size: 20px;
+    color:rgb(182, 37, 37);
+}
+
+.containerForm input{
+    background-color: rgb(243, 243, 243);
+    border: solid 2px blue;
+}
+.containerForm input::placeholder{
+    color: rgb(129, 129, 129);
+    font-size: 20px;
 }
 
 .subIndexContainer2{
@@ -157,15 +172,6 @@ a{
     position: absolute;
     top: 0;
     right: 0;
-}
-
-
-.containerForm{
-    text-align: center;
-}
-
-.containerForm p{
-    margin: 10px 0 ;
 }
 
 a{
