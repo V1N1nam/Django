@@ -45,6 +45,17 @@ function changeTheme(switchToggle) {
             element.style.color = 'rgb(236, 43, 75)';
             element.style.border = '2px solid rgb(236, 43, 75)';
         });
+
+        document.querySelectorAll('input[type="text"]').forEach(element => {
+            element.style.backgroundColor = 'transparent';
+            element.style.color = 'white';
+        });
+
+        document.querySelectorAll('input[type="password"]').forEach(element => {
+            element.style.backgroundColor = 'transparent'
+            element.style.color = 'white';;
+        });
+
     }
 
     else {
@@ -81,6 +92,16 @@ function changeTheme(switchToggle) {
         document.querySelectorAll('.signupBtn').forEach(element => {
             element.style.color = 'white';
             element.style.border = '2px solid white';
+        });
+
+        document.querySelectorAll('input[type="text"]').forEach(element => {
+            element.style.backgroundColor = 'white';
+            element.style.color = 'rgb(73, 73, 73)';
+        });
+
+        document.querySelectorAll('input[type="password"]').forEach(element => {
+            element.style.backgroundColor = 'white';
+            element.style.color = 'rgb(73, 73, 73)';
         });
     }
 }
