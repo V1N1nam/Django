@@ -17,8 +17,8 @@
 
             <form class="containerForm" method="post" action="{% url 'login' %}">
                 {% csrf_token %}
-                <p class="inputTitle">Usuário</p><input type="text" name="username" placeholder="Usuário">
-                <p class"inputTitle">Senha</p><input type="password" name="password" placeholder="Senha">
+                <input type="text" name="username" placeholder="Usuário">
+                <input type="password" name="password" placeholder="Senha">
                 <button class="signinBtn" type="submit">Login</button>
             </form>
             
