@@ -20,6 +20,16 @@ a{
     color: #000;
 }
 
+.containerLogo{
+    text-align: center;
+    justify-content: center;
+}
+
+.imgLogo{
+    height: 100px;
+    width: 300px;
+}
+
 .title{
     text-align: center;
     justify-content: center;
@@ -28,6 +38,7 @@ a{
 .containerLogin{
     display: flex;
     flex-direction: column;
+    height: 50%;
 }
 
 input[type="text"], input[type="password"]{
@@ -68,6 +79,7 @@ ul{
 .btns{
     display: flex;
     justify-content: center;
+    height: 60px;
 }
 
 .loginBtn, .registerBtn{
