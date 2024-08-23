@@ -35,8 +35,8 @@ a{
 }
 
 .imgLogo{
-    height: 100px;
-    width: 300px;
+    width: 250px;
+    margin: 0;
 }
 
 .title{
@@ -44,6 +44,7 @@ a{
     justify-content: center;
     color: rgb(196, 19, 48);
     font-size: 30px;
+    margin: 10px 0 0 0;
 }
 
 .containerLogin{
@@ -67,6 +68,7 @@ input[type="text"], input[type="password"]{
 
 .formPassOne{
     margin-left: -3px;
+    margin-top: 0;
 }
 
 .formUser, .formPassOne, .formPassTwo{
@@ -77,7 +79,12 @@ input[type="text"], input[type="password"]{
 }
 
 .formUser p, .formPassOne p, .formPassTwo p{
-    margin-bottom: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.form-control{
+    margin-bottom: 10px;
 }
 
 ul{
@@ -101,7 +108,7 @@ ul{
     width: 180px;
     margin: 0 10px;
     height: 60px;
-    border-radius: 30px;
+    border-radius: 50px;
     cursor: pointer;
     outline: none;
     color: white;
