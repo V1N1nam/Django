@@ -42,15 +42,6 @@ a{
     background-color: white;
 }
 
-.containerForm{
-    text-align: center;
-}
-
-.containerForm input::placeholder{
-    color: rgb(129, 129, 129);
-    font-size: 20px;
-}
-
 .subIndexContainer2{
     display: flex;
     flex-direction: column;
@@ -130,9 +121,9 @@ a{
 }
 
 .signinBtn{
-    background-image: linear-gradient(to top, rgb(182, 37, 37), rgb(236, 43, 75));
+    background-color: rgb(236, 43, 75);
     border: none;
-    width: 300px;
+    width: 330px;
     margin-top: 30px;
 }
 
@@ -141,6 +132,7 @@ a{
     border: solid 2px white;
     width: 160px;
     font-size: 2px;
+    box-shadow: inset 0 0 5px #00000036;
 }
 
 .signinBtn, .signupBtn{
@@ -195,37 +187,30 @@ a{
     justify-content: center;
 }
 
+.containerForm{
+    text-align: center;
+}
+
+.containerForm input::placeholder{
+    color: rgb(129, 129, 129);
+    font-size: 20px;
+}
+
 input[type="text"], input[type="password"]{
-    width: 280px;
+    width: 300px;
     height: 25px;
-    padding: 15px 10px;
+    padding: 15px 15px;
     border-radius: 50px;
     outline: none;
     border: none;
     margin-top: 25px;
     background-color: rgb(243, 243, 243);
-    box-shadow: inset 0 0 6px #b8bbbe;
+    box-shadow: inset 0 0 2px #b8bbbe;
+    font-size: 20px;
+    color:rgb(73, 73, 73);
 }
 
 .btns{
     display: flex;
     justify-content: center;
-}
-
-.loginBtn, .registerBtn{
-    width: 100px;
-    height: 23px;
-    margin: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
-    border: solid 1px #000000;
-    margin-bottom: 100px;
-    margin-top: 20px;
-}
-
-.loginBtn:hover, .registerBtn:hover{
-    scale: 1.07;
-    transition: .3s;
-    opacity: 70%;
 }
