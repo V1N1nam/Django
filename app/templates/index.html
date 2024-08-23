@@ -1,11 +1,11 @@
-{% extends 'layout.html'%}
+{% extends 'layout.html' %}
 {% load static %}
 
 {% block header %}
 {% endblock %}
 
 {% block title %}
-    Bem vindo!
+    Bem-vindo!
 {% endblock %}
 
 {% block content %}
@@ -14,21 +14,18 @@
         <div class="subIndexContainer">
             <link rel="stylesheet" href="{% static 'app/css/index.css' %}">
             <img class="imgLogo" src="{% static 'app/img/brose_logo.png' %}" alt="">
-            <p class="titleLeft">
-                Usuário
-            </p>
-            <p class="titleLeft">
-                Senha
-            </p>
-            <div class="titleButtonsContainer">
-                <button class="signinBtn" onclick="window.location.href='{% url 'login' %}'">
-                    Sign in
-                </button>
-            </div>
+
+            <form class="containerForm" method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <p>Nome de Usuario</p><input type="text" name="username" placeholder="Nome de usuário">
+                <p>Senha</p><input type="password" name="password" placeholder="Senha">
+                <button class="signinBtn" type="submit">Login</button>
+            </form>
+            
         </div>
         <div class="subIndexContainer2">
             <div class="signupContainer">
-                <p class="titleRight">Bem vindo a página de login</p>
+                <p class="titleRight">Bem-vindo à página de login</p>
                 <p class="subTitleRight">Não está cadastrado?</p>
                 <button class="signupBtn" onclick="window.location.href='{% url 'register' %}'">
                     Sign up
@@ -39,8 +36,3 @@
     <script src="{% static 'app/js/index.js' %}"></script>
     <script src="{% static 'app/js/darktheme.js' %}"></script>
 {% endblock %}
-
-
-
-
-

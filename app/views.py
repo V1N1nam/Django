@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from .forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm as CustomAuthenticationForm
 from .forms import UserRegistrationForm
 import json
 
@@ -9,12 +9,12 @@ def minha_view(request):
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')
+            return redirect('index')
     else:
-        form = UserCreationForm()
+        form = UserRegistrationForm()
     return render(request, 'register.html', {'form': form})
 
 def login_view(request):
@@ -23,10 +23,10 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('main')
+            return redirect('main')  # Redirecione para uma URL válida
     else:
         form = CustomAuthenticationForm()
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'index.html', {'form': form})
 
 def principal_view(request):
     return render(request, 'main.html')
