@@ -8,19 +8,13 @@
 {% block content %}
     <link rel="stylesheet" href="{% static 'app/css/main.css' %}">
     <div class="mainContainer">
-        <div class="imgUser">
-            <img class="imgUser" src="{% static 'app/img/user.jpg' %}" alt="">
-        </div>
-        <div class="infoUser">
-            <p>Nome: <span>Paulo</span></p>
-            <p>Cargo: <span>Aprendiz</span></p>
-            <p>Data de nascimento: <span>12/04/2004</span></p>
-        </div>
-        <ul class="skills">
-            <li>Lider</li>
-            <li>Equipe</li>
-            <li>Bom</li>
-            <li>Veloz</li>
+        <h1>Lista de Funcionários</h1>
+        <ul class="funcionariosNomes">
+            {% for funcionario in funcionarios %}
+                <li class="">
+                    <a href="{% url 'skills.html' funcionario.id %}">{{ funcionario.nome }}</a>
+                </li>
+            {% endfor %}
         </ul>
     </div>
     <div class="actions">
@@ -28,5 +22,7 @@
         <button class="editBtn">Editar</button>
         <button class="selectBtn">Selecionar</button>
     </div>
+
+
     <script src="{% static 'app/js/main.js' %}"></script>
 {% endblock %}

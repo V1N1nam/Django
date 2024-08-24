@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm as CustomAuthenticationForm
 from .forms import UserRegistrationForm
+from django.urls import path
+from .models import Funcionario
+from django.shortcuts import render, get_object_or_404
+from . import views
 import json
 
 def minha_view(request):
@@ -30,3 +34,15 @@ def login_view(request):
 
 def principal_view(request):
     return render(request, 'main.html')
+
+def lista_funcionarios(request):
+    funcionarios = Funcionario.objects.all()
+    print(funcionarios)
+    return render(request, 'main.html', {'funcionarios': funcionarios})
+
+
+
+def funcionario_detalhes(request, funcionario_id):
+    funcionario = get_object_or_404(Funcionario, id=funcionario_id)
+    return render(request, 'skills.html', {'funcionario': funcionario})
+
