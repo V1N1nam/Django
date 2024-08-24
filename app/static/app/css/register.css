@@ -68,7 +68,6 @@ input[type="text"], input[type="password"]{
 
 .formPassOne{
     margin-left: -3px;
-    margin-top: 0;
 }
 
 .formUser, .formPassOne, .formPassTwo{
@@ -76,6 +75,7 @@ input[type="text"], input[type="password"]{
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: 20px;
 }
 
 .formUser p, .formPassOne p, .formPassTwo p{
@@ -84,7 +84,7 @@ input[type="text"], input[type="password"]{
 }
 
 .form-control{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 ul{
@@ -107,6 +107,7 @@ ul{
 .signinBtn, .signupBtn{
     width: 180px;
     margin: 0 10px;
+    margin-top: 30px;
     height: 60px;
     border-radius: 50px;
     cursor: pointer;
