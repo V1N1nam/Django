@@ -4,14 +4,19 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 
 class UserRegistrationForm(UserCreationForm):
+
+    username = forms.CharField(
+    widget=forms.TextInput(attrs={'class': 'form-control', 'id': 'id_username', 'placeholder': 'Digite seu nome de usuário'}),
+    label='Nome de usuário'
+    )
     password1 = forms.CharField(
         label='Password',
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'id': 'id_password'}),
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'id': 'id_password', 'placeholder': 'Crie uma senha'}),
         help_text='Coloque sua senha.'
     )
     password2 = forms.CharField(
         label='Confirme sua senha',
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'id': 'id_password2'}),
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'id': 'id_password2', 'placeholder': 'Confirme sua senha'}),
         help_text='Coloque a mesma senha.'
     )
 
