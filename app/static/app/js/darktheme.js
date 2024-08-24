@@ -1,20 +1,57 @@
-let switchToggle = 0;
+let switchToggle = JSON.parse(localStorage.getItem('switchToggle')) || 0;
 
 function toggle() {
     if (switchToggle === 0) {
         switchToggle = 1;
+        localStorage.setItem('switchToggle', JSON.stringify(switchToggle));
     }
     else {
         switchToggle = 0;
+        localStorage.setItem('switchToggle', JSON.stringify(switchToggle));
     }
-    console.log(switchToggle);
-    console.log(window.location.pathname);
 }
 
 function changeTheme(switchToggle) {
-    
     if (window.location.pathname === '/register/') {
-        console.log('register testando');
+        if (switchToggle === 1) {
+            document.body.style.backgroundImage = 'none';
+            document.body.style.backgroundColor = 'rgb(30,33,36)';
+            document.body.style.color = 'white';
+
+            document.querySelectorAll('.registerContainer').forEach(element => {
+                element.style.backgroundColor = 'transparent';
+            });
+
+            document.querySelectorAll('input[type="text"]').forEach(element => {
+                element.style.backgroundColor = 'transparent';
+                element.style.color = 'white';
+            });
+    
+            document.querySelectorAll('input[type="password"]').forEach(element => {
+                element.style.backgroundColor = 'transparent'
+                element.style.color = 'white';;
+            });
+        }
+        else {
+            document.body.style.backgroundImage = 'linear-gradient(to right, rgb(235, 235, 235), rgb(225, 233, 241))';
+            document.body.style.backgroundColor = 'transparent';
+            document.body.style.color = 'black';
+
+            
+            document.querySelectorAll('.registerContainer').forEach(element => {
+                element.style.backgroundColor = 'white';
+            });
+
+            document.querySelectorAll('input[type="text"]').forEach(element => {
+                element.style.backgroundColor = 'rgb(243, 243, 243)';
+                element.style.color = 'rgb(73, 73, 73)';
+            });
+    
+            document.querySelectorAll('input[type="password"]').forEach(element => {
+                element.style.backgroundColor = 'rgb(243, 243, 243)'
+                element.style.color = 'rgb(73, 73, 73)';;
+            });
+        }
     }
     
 
@@ -29,7 +66,7 @@ function changeTheme(switchToggle) {
             });
     
             document.querySelectorAll('.indexContainer').forEach(element => {
-                element.style.border = '2px solid rgb(236, 43, 75)';
+                element.style.boxShadow = '0 0 20px 0 rgba(0, 0, 0, 1);';
             });
     
             document.querySelectorAll('.subIndexContainer').forEach(element => {
@@ -38,7 +75,6 @@ function changeTheme(switchToggle) {
     
             document.querySelectorAll('.subIndexContainer2').forEach(element => {
                 element.style.backgroundImage = 'none';
-                element.style.borderLeft = '2px solid rgb(236, 43, 75)';
             });
     
             document.querySelectorAll('.subTitleRight').forEach(element => {
@@ -67,7 +103,7 @@ function changeTheme(switchToggle) {
         }
     
         else {
-            document.body.style.backgroundColor = 'white';
+            document.body.style.backgroundColor = 'transparent';
             document.body.style.color = 'rgb(236, 43, 75)';
             document.body.style.backgroundImage = 'linear-gradient(to right, rgb(235, 235, 235), rgb(225, 233, 241))';
             
@@ -76,7 +112,7 @@ function changeTheme(switchToggle) {
             });
     
             document.querySelectorAll('.indexContainer').forEach(element => {
-                element.style.border = 'none';
+                element.style.boxShadow = '0 0 20px 0 rgba(0, 0, 0, 0.2);';
             });
     
             document.querySelectorAll('.subIndexContainer').forEach(element => {
@@ -86,7 +122,6 @@ function changeTheme(switchToggle) {
             document.querySelectorAll('.subIndexContainer2').forEach(element => {
                 element.style.backgroundColor = 'transparent';
                 element.style.backgroundImage = 'linear-gradient(to top, rgb(182, 37, 37), rgb(236, 43, 75))';
-                element.style.border = 'none';
             });
     
             document.querySelectorAll('.subTitleRight').forEach(element => {
@@ -115,9 +150,13 @@ function changeTheme(switchToggle) {
     }
 }
 
-
 const switchButton = document.querySelector('.darkthemeButton');
 switchButton.addEventListener('click', () => {
     toggle(switchToggle);
     changeTheme(switchToggle);
 });
+
+console.log(switchToggle);
+console.log(window.location.pathname);
+
+changeTheme(switchToggle);
