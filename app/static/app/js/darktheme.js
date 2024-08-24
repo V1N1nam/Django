@@ -120,7 +120,6 @@ function changeTheme(switchToggle) {
             });
     
             document.querySelectorAll('.indexContainer').forEach(element => {
-                element.style.boxShadow = '0 0 20px 0 rgba(0, 0, 0, 0.2);';
                 element.style.backgroundColor = 'transparent';
             });
     
@@ -165,7 +164,6 @@ switchButton.addEventListener('click', () => {
     changeTheme(switchToggle);
 });
 
-console.log(switchToggle);
 console.log(window.location.pathname);
 
 changeTheme(switchToggle);
