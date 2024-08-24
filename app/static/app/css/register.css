@@ -29,6 +29,7 @@ a{
     height: 600px; /* Deixe a altura do conteúdo determinar a altura do body */
     background-color: white;
     padding: 20px;
+    transition: .5s;
 }
 
 .containerLogo{
@@ -37,7 +38,7 @@ a{
 }
 
 .imgLogo{
-    width: 250px;
+    width: 220px;
     margin: 0;
 }
 
@@ -45,8 +46,9 @@ a{
     text-align: center;
     justify-content: center;
     color: rgb(196, 19, 48);
-    font-size: 30px;
-    margin: 10px 0 0 0;
+    font-size: 25px;
+    margin: 20px 0 0 0;
+    font-weight: normal;
 }
 
 .containerLogin{
@@ -96,7 +98,7 @@ ul{
 }
 
 .passRules li{
-    font-size: 10px;
+    font-size: 15px;
     text-align: justify;
 }
 
@@ -109,7 +111,7 @@ ul{
 .signinBtn, .signupBtn{
     width: 180px;
     margin: 0 10px;
-    margin-top: 30px;
+    margin-top: 20px;
     height: 60px;
     border-radius: 50px;
     cursor: pointer;

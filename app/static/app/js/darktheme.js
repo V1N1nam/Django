@@ -16,10 +16,14 @@ function changeTheme(switchToggle) {
         if (switchToggle === 1) {
             document.body.style.backgroundImage = 'none';
             document.body.style.backgroundColor = 'rgb(30,33,36)';
-            document.body.style.color = 'white';
+            document.body.style.color = 'rgb(212, 212, 212)';
+
+            document.querySelectorAll('.title').forEach(element => {
+                element.style.color = 'rgb(212, 212, 212)';
+            });
 
             document.querySelectorAll('.registerContainer').forEach(element => {
-                element.style.backgroundColor = 'transparent';
+                element.style.backgroundColor = 'rgb(13, 14, 15)';
             });
 
             document.querySelectorAll('input[type="text"]').forEach(element => {
@@ -37,6 +41,9 @@ function changeTheme(switchToggle) {
             document.body.style.backgroundColor = 'transparent';
             document.body.style.color = 'black';
 
+            document.querySelectorAll('.title').forEach(element => {
+                element.style.color = 'black';
+            });
             
             document.querySelectorAll('.registerContainer').forEach(element => {
                 element.style.backgroundColor = 'white';
@@ -62,23 +69,24 @@ function changeTheme(switchToggle) {
             document.body.style.backgroundColor = 'rgb(30,33,36)';
         
             document.querySelectorAll('.titleRight').forEach(element => {
-                element.style.color = 'rgb(236, 43, 75)';
+                element.style.color = 'rgb(212, 212, 212)';
             });
     
             document.querySelectorAll('.indexContainer').forEach(element => {
-                element.style.boxShadow = '0 0 20px 0 rgba(0, 0, 0, 1);';
+                
             });
     
             document.querySelectorAll('.subIndexContainer').forEach(element => {
-                element.style.backgroundColor = 'transparent';
+                element.style.backgroundColor = 'rgb(13, 14, 15)';
             });
     
             document.querySelectorAll('.subIndexContainer2').forEach(element => {
                 element.style.backgroundImage = 'none';
+                element.style.backgroundColor = 'rgb(13, 14, 15)';
             });
     
             document.querySelectorAll('.subTitleRight').forEach(element => {
-                element.style.color = 'rgb(236, 43, 75)';
+                element.style.color = 'rgb(212, 212, 212)';
             });
     
             document.querySelectorAll('.signinBtn').forEach(element => {
@@ -86,8 +94,8 @@ function changeTheme(switchToggle) {
             });
     
             document.querySelectorAll('.signupBtn').forEach(element => {
-                element.style.color = 'rgb(236, 43, 75)';
-                element.style.border = '2px solid rgb(236, 43, 75)';
+                element.style.color = 'rgb(212, 212, 212)';
+                element.style.border = '2px solid rgb(212, 212, 212)';
             });
     
             document.querySelectorAll('input[type="text"]').forEach(element => {
@@ -96,8 +104,8 @@ function changeTheme(switchToggle) {
             });
     
             document.querySelectorAll('input[type="password"]').forEach(element => {
-                element.style.backgroundColor = 'transparent'
-                element.style.color = 'white';;
+                element.style.backgroundColor = 'transparent';
+                element.style.color = 'white';
             });
     
         }
@@ -113,6 +121,7 @@ function changeTheme(switchToggle) {
     
             document.querySelectorAll('.indexContainer').forEach(element => {
                 element.style.boxShadow = '0 0 20px 0 rgba(0, 0, 0, 0.2);';
+                element.style.backgroundColor = 'transparent';
             });
     
             document.querySelectorAll('.subIndexContainer').forEach(element => {

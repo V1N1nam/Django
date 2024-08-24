@@ -12,7 +12,6 @@ html, body {
 body {
     display: flex;
     flex-direction: row;
-    transition: .2s;
     background-image: linear-gradient(to right, rgb(235, 235, 235), rgb(225, 233, 241));
 }
 
@@ -39,7 +38,7 @@ a{
     padding: 15px; /* Use padding em vez de margin para evitar interferir na centralização */
     box-sizing: border-box; /* Inclui borda e padding dentro da largura */
     background-color: white;
-    transition: .15s;
+    transition: .2s;
 }
 
 .subIndexContainer2{
