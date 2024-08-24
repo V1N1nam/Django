@@ -4,10 +4,21 @@ function toggle() {
     if (switchToggle === 0) {
         switchToggle = 1;
         localStorage.setItem('switchToggle', JSON.stringify(switchToggle));
+
     }
     else {
         switchToggle = 0;
         localStorage.setItem('switchToggle', JSON.stringify(switchToggle));
+    }
+}
+
+const imageToggle = document.querySelector('.darkthemeImage');
+
+function toggleImage(switchToggle) {
+    if (switchToggle === 1) {
+        imageToggle.src = darkImagePath;
+    } else {
+        imageToggle.src = lightImagePath;
     }
 }
 
@@ -161,8 +172,10 @@ const switchButton = document.querySelector('.darkthemeButton');
 switchButton.addEventListener('click', () => {
     toggle(switchToggle);
     changeTheme(switchToggle);
+    toggleImage(switchToggle)
 });
 
 console.log(window.location.pathname);
 
 changeTheme(switchToggle);
+toggleImage(switchToggle)
