@@ -131,3 +131,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/main/'  # URL para onde o usuário será redirecionado após o login
 
+# Definir o formato de data padrão
+DATE_FORMAT = 'd/m/Y'  # Exemplo: 24/08/2024
+
+# Definir o formato de data e hora padrão
+DATETIME_FORMAT = 'd/m/Y H:i:s'  # Exemplo: 24/08/2024 15:30:00
+
