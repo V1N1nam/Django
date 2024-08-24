@@ -15,7 +15,7 @@ function changeTheme(switchToggle) {
     if (window.location.pathname === '/register/') {
         if (switchToggle === 1) {
             document.body.style.backgroundImage = 'none';
-            document.body.style.backgroundColor = 'rgb(13, 14, 15)';
+            document.body.style.backgroundColor = 'rgb(12, 12, 18)';
             document.body.style.color = 'rgb(212, 212, 212)';
 
             document.querySelectorAll('.title').forEach(element => {
@@ -23,7 +23,7 @@ function changeTheme(switchToggle) {
             });
 
             document.querySelectorAll('.registerContainer').forEach(element => {
-                element.style.backgroundColor = 'rgb(30,33,36)';
+                element.style.backgroundColor = 'rgb(30, 33, 40)';
             });
 
             document.querySelectorAll('input[type="text"]').forEach(element => {
@@ -66,7 +66,7 @@ function changeTheme(switchToggle) {
         if (switchToggle === 1) {
             document.body.style.color = 'white';
             document.body.style.backgroundImage = 'none';
-            document.body.style.backgroundColor = 'rgb(13,14,15)';
+            document.body.style.backgroundColor = 'rgb(12, 12, 18)';
         
             document.querySelectorAll('.titleRight').forEach(element => {
                 element.style.color = 'rgb(212, 212, 212)';
@@ -77,12 +77,12 @@ function changeTheme(switchToggle) {
             });
     
             document.querySelectorAll('.subIndexContainer').forEach(element => {
-                element.style.backgroundColor = 'rgb(30,33,36)';
+                element.style.backgroundColor = 'rgb(30, 33, 40)';
             });
     
             document.querySelectorAll('.subIndexContainer2').forEach(element => {
                 element.style.backgroundImage = 'none';
-                element.style.backgroundColor = 'rgb(30,33,36)';            });
+                element.style.backgroundColor = 'rgb(30, 33, 40)';            });
     
             document.querySelectorAll('.subTitleRight').forEach(element => {
                 element.style.color = 'rgb(212, 212, 212)';
