@@ -42,10 +42,10 @@ a{
     margin: 0;
 }
 
-.title{
+.registerTitle{
     text-align: center;
     justify-content: center;
-    color: rgb(196, 19, 48);
+    color: rgb(157, 0, 0);
     font-size: 25px;
     margin: 20px 0 0 0;
     font-weight: normal;

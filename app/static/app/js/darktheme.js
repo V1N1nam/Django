@@ -29,7 +29,7 @@ function changeTheme(switchToggle) {
             document.body.style.backgroundColor = 'rgb(12, 12, 18)';
             document.body.style.color = 'rgb(212, 212, 212)';
 
-            document.querySelectorAll('.title').forEach(element => {
+            document.querySelectorAll('.registerTitle').forEach(element => {
                 element.style.color = 'rgb(212, 212, 212)';
             });
 
@@ -52,8 +52,8 @@ function changeTheme(switchToggle) {
             document.body.style.backgroundColor = 'transparent';
             document.body.style.color = 'black';
 
-            document.querySelectorAll('.title').forEach(element => {
-                element.style.color = 'black';
+            document.querySelectorAll('.registerTitle').forEach(element => {
+                element.style.color = 'rgb(157, 0, 0)';
             });
             
             document.querySelectorAll('.registerContainer').forEach(element => {
