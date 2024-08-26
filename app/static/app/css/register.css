@@ -108,6 +108,10 @@ ul{
     height: 60px;
 }
 
+.signupBtn{
+    display: none;
+}
+
 .signinBtn, .signupBtn{
     width: 180px;
     margin: 0 10px;

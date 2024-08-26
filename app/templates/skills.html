@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>{{ funcionario.nome }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionario</title>
 </head>
 <body>
     <h1>{{ funcionario.nome }}</h1>
     <p><strong>Cargo:</strong> {{ funcionario.cargo }}</p>
-    <p><strong>Data de Nascimento:</strong> {{ funcionario.data_nascimento }}</p>
+    <p><strong>Data de Nascimento:</strong> {{ funcionario.data_nascimento|date:"d/m/Y" }}</p>
     <a href="{% url 'main' %}">Voltar</a>
 </body>
 </html>
