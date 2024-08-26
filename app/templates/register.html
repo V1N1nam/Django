@@ -25,11 +25,6 @@
                     {{ form.password1 }} {% if form.password1.errors %}
                     <div class="error">{{ form.password1.errors }}</div>
                     {% endif %}
-                    <ul class="passRules">
-                        <li>Deve conter no minimo 8 caracteres.</li>
-                        <li>Não deve ser totalmente númerica.</li>
-                        <li>Não deve ser uma senha comum.</li>
-                    </ul>
                 </div>
                 <div class="formPassTwo">
                     {{ form.password2 }} {% if form.password2.errors %}

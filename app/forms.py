@@ -31,9 +31,7 @@ class UserRegistrationForm(UserCreationForm):
         if password1 and password2:
             if password1 != password2:
                 raise ValidationError("As senhas não são iguais.")
-            if len(password2) < 8:
-                raise ValidationError("A senha deve ter pelo menos 8 caracteres.")
-
+            
         return password2
 
 
