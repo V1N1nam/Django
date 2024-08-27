@@ -15,6 +15,10 @@
         const lightImagePath = "{% static 'app/img/icons/light-mode.png' %}";
     </script>
     <script src="{% static 'app/js/darktheme.js' %}" defer></script>
+
+    {% block extrahead %}
+    {% endblock %}
+
 </head>
 <body>
     <button style="position: absolute; top: 15px; right: 10px;  cursor: pointer; border-radius: 50%; border: none; padding: 0; height: 30px; width: 30px; background-color: transparent" class="darkthemeButton"><img class="darkthemeImage" src="{% static 'app/img/icons/dark-mode.png' %}" style="margin: 0; width: 30px; height: 30px">

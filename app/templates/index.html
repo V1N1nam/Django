@@ -8,10 +8,14 @@
     Bem-vindo!
 {% endblock %}
 
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'app/css/index.css' %}">
+    <script src="{% static 'app/js/darktheme.js' %}" defer></script>
+{% endblock %}
+
 {% block content %}
     <div class="indexContainer">
         <div class="subIndexContainer">
-            <link rel="stylesheet" href="{% static 'app/css/index.css' %}">
             <img class="imgLogo" src="{% static 'app/img/brose_logo.png' %}" alt="">
 
             <form class="containerForm" method="post" action="{% url 'login' %}">
@@ -32,5 +36,4 @@
             </div>
         </div>
     </div>
-    <script src="{% static 'app/js/darktheme.js' %}"></script>
 {% endblock %}
