@@ -37,7 +37,7 @@ a{
     padding: 15px; /* Use padding em vez de margin para evitar interferir na centralização */
     box-sizing: border-box; /* Inclui borda e padding dentro da largura */
     background-color: white;
-    transition: .2s;
+    
 }
 
 .subIndexContainer2{
@@ -51,7 +51,7 @@ a{
     padding: 15px; /* Use padding em vez de margin para evitar interferir na centralização */
     box-sizing: border-box; /* Inclui borda e padding dentro da largura */
     background-image: linear-gradient(to top, rgb(182, 37, 37), rgb(236, 43, 75));
-    transition: .5s;
+    
 }
 
 .signupContainer{
@@ -67,13 +67,13 @@ a{
     color: white;
     font-weight: bold;
     text-align: center;
-    transition: .5s;
+    
 }
 
 .subTitleRight{
     color: white;
     font-size: 30px;
-    transition: .5s;
+    
 }
 
 .titleButtonsContainer{
@@ -144,7 +144,7 @@ a{
     outline: none;
     color: white;
     font-size: 20px;
-    transition: .5s;
+    
 }
 
 .signinBtn:hover, .signupBtn:hover{

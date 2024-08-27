@@ -38,11 +38,12 @@
                 </div>
                 <div class="btns">
                 <button class="signupBtn" type="submit">Cadastrar</button>
-                <button class="signinBtn" onclick="window.location.href='{% url 'index' %}'">Entrar</button>
+                <button class="signinBtn" onclick="redirectWithDelay('{% url 'index' %}')">Entrar</button>
                 </div>
             </form>
         </section>
     </div>
     <script id="errors-json" type="application/json">{{ errors_json|safe }}</script>
     <script src="{% static 'app/js/register.js' %}"></script>
+    <script src="{% static 'app/js/redirectDelay.js' %}"></script>
 {% endblock %}

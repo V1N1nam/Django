@@ -23,7 +23,7 @@ a{
     height: 600px; /* Deixe a altura do conteúdo determinar a altura do body */
     background-color: white;
     padding: 20px;
-    transition: .5s;
+    
 }
 
 .containerLogo{
@@ -116,7 +116,7 @@ ul{
     outline: none;
     color: white;
     font-size: 20px;
-    transition: .5s;
+    
     background-color: rgb(236, 43, 75);
     border: none;
 }

@@ -8,12 +8,5 @@ function redirectWithDelay(url) {
     // Aplica o delay antes de redirecionar visualmente
     setTimeout(() => {
         window.location.href = url;
-    }, 500);
+    }, 250);
 }
-
-
-/*function redirectWithDelay(url, delay) {
-    setTimeout(() => {
-        window.location.href = url;
-    }, delay);
-}*/
