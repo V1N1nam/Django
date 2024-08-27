@@ -9,12 +9,6 @@ html, body {
     font-family: Calibri;
 }
 
-body{
-    background-image: linear-gradient(to right, rgb(235, 235, 235), rgb(225, 233, 241));
-    transition: .2s;
-}
-
-
 a{
     text-decoration: none;
     color: #000;
