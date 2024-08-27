@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funcionario</title>
-</head>
-<body>
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block header %}
+{% endblock %}
+
+{% block title %}
+    Funcionário
+{% endblock %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'app/css/skills.css' %}">
+    <script src="{% static 'app/js/darktheme.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
     <h1>{{ funcionario.nome }}</h1>
     <p><strong>Cargo:</strong> {{ funcionario.cargo }}</p>
     <p><strong>Data de Nascimento:</strong> {{ funcionario.data_nascimento|date:"d/m/Y" }}</p>
     <a href="{% url 'main' %}">Voltar</a>
-</body>
-</html>
+{% endblock %}
