@@ -98,15 +98,15 @@ a{
 }
 
 .editBtn{
-    background-color: #6494ed99;
+    background-color: rgb(104, 157, 255);
 }
 
 .deleteBtn{
-    background-color: #b22222a9;
+    background-color: rgb(104, 157, 255);
 }
 
 .selectBtn{
-    background-color: #228b22a9;
+    background-color: rgb(104, 157, 255);
 }
 
 .editBtn:hover,.deleteBtn:hover, .selectBtn:hover{

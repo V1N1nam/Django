@@ -166,6 +166,53 @@ function changeTheme(switchToggle) {
             });
         }
     }
+
+    else if (window.location.pathname === '/main/') {
+        if (switchToggle === 1) {
+            document.body.style.color = 'white';
+            document.body.style.backgroundImage = 'none';
+            document.body.style.backgroundColor = 'rgb(12, 12, 18)';
+            document.querySelectorAll('a').forEach(element => {
+                element.style.color = 'white';
+            });
+            document.querySelectorAll('.mainContainer').forEach(element => {
+                element.style.border = '2px solid white';
+            })
+            document.querySelectorAll('button').forEach(element => {
+                element.style.color = 'white';
+            })
+        }
+
+        else {
+            document.body.style.backgroundColor = 'transparent';
+            document.body.style.color = 'black';
+            document.body.style.backgroundImage = 'linear-gradient(to right, rgb(235, 235, 235), rgb(225, 233, 241))';
+            document.querySelectorAll('a').forEach(element => {
+                element.style.color = 'black';
+            });
+            document.querySelectorAll('.mainContainer').forEach(element => {
+                element.style.border = '2px solid black';
+            })
+            document.querySelectorAll('button').forEach(element => {
+                element.style.color = 'black';
+            }) 
+        }
+    }
+
+    else {
+        if (switchToggle === 1) {
+            document.body.style.color = 'white';
+            document.body.style.backgroundImage = 'none';
+            document.body.style.backgroundColor = 'rgb(12, 12, 18)';
+            console.log('else funcionando');
+        }
+
+        else {
+            document.body.style.backgroundColor = 'transparent';
+            document.body.style.color = 'black';
+            document.body.style.backgroundImage = 'linear-gradient(to right, rgb(235, 235, 235), rgb(225, 233, 241))';
+        }
+    }
 }
 
 const switchButton = document.querySelector('.darkthemeButton');
