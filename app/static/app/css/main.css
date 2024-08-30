@@ -58,8 +58,13 @@ a{
     background-color: rgb(210, 211, 221);
     margin: 10px 0;
     border-radius: 4px;
-
     border: none;
+    cursor: pointer;
+}
+
+.funcionarioContainer a{
+    font-size: 30px;
+    font-family: Calibri;
 }
 
 .funcionariosNomes li{
@@ -95,41 +100,39 @@ a{
 }
 
 .actions{
-    padding: 20px;
     display: flex;
-    justify-content: space-around;
+    width: 90%;
+    justify-content: right;
 }
 
-.editBtn,.deleteBtn,.selectBtn{
+.addBtn, .editBtn, .deleteBtn{
     cursor: pointer;
     border: none;
-    padding: 6px 10px;
     border-radius: 4px;
     font-size: 25px;
 }
 
-.editBtn,.deleteBtn,.selectBtn{
+.addBtn, .editBtn, .deleteBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    border: none;
-    padding: 6px 10px;
-    border-radius: 4px;
-    font-size: 25px;
-}
-
-.editBtn{
-    background-color: rgb(104, 157, 255);
-}
-
-.deleteBtn{
-    background-color: rgb(104, 157, 255);
-}
-
-.selectBtn{
-    background-color: rgb(104, 157, 255);
-}
-
-.editBtn:hover,.deleteBtn:hover, .selectBtn:hover{
-    scale: 1.07;
+    border-radius: 5px;
     transition: .3s;
+    padding: 5px;
+    margin: 10px 0 0 40px;
+}
+
+.addBtn:hover,.editBtn:hover, .deleteBtn:hover{
     opacity: 90%;
+}
+
+.addBtn img, .editBtn img, .deleteBtn img{
+    width: 50px;
+    margin: 0;
+    object-fit: cover;
+}
+
+.deleteBtn img{
+    width: 55px;
 }
