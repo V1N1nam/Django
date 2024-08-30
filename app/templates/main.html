@@ -14,9 +14,12 @@
         <h1>Lista de Funcionários</h1>
         <ul class="funcionariosNomes">
             {% for funcionario in funcionarios %}
-                <li class="">
-                    <a href="{% url 'skills.html' funcionario.id %}">{{ funcionario.nome }}</a>
-                </li>
+                <div class="funcionarioContainer">
+                    <img class="funcionarioProfileImage" src="{% static 'app/img/user.jpg' %}" alt="">
+                    <li class="">
+                        <a href="{% url 'skills.html' funcionario.id %}">{{ funcionario.nome }}</a>
+                    </li>
+                </div>
             {% endfor %}
         </ul>
     </div>
