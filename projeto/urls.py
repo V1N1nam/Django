@@ -1,7 +1,8 @@
+
 from django.contrib import admin
 from django.urls import path
 from app import views
-from django.contrib.auth import views as auth_views  # Importar aqui
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # URL para a administração do Django
@@ -10,5 +11,7 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),  # URL para logout
     path('register/', views.register, name='register'),  # URL para registro de novos usuários
     path('main/', views.lista_funcionarios, name='main'),  # Corrigido para lista_funcionarios
-    path('funcionario/<int:funcionario_id>/', views.funcionario_detalhes, name='skills.html'),
+    path('funcionario/<int:funcionario_id>/', views.funcionario_detalhes, name='funcionario_detail'),  # Corrigido para nome correto da URL
+    path('funcionario/<int:funcionario_id>/add_skill/', views.add_skill, name='add_skill'),  # Adiciona skill ao funcionário
+    path('funcionario/<int:funcionario_id>/remove_skill/<int:skill_id>/', views.remove_skill, name='remove_skill'),
 ]

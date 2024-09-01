@@ -11,11 +11,29 @@
 {% block extrahead %}
     <link rel="stylesheet" href="{% static 'app/css/skills.css' %}">
     <script src="{% static 'app/js/darktheme.js' %}" defer></script>
+    <script src="{% static 'app/js/skills.js' %}" defer></script>
+    <script src="{% static 'app/js/jquery.min.js' %}"></script>
 {% endblock %}
 
 {% block content %}
     <h1>{{ funcionario.nome }}</h1>
     <p><strong>Cargo:</strong> {{ funcionario.cargo }}</p>
     <p><strong>Data de Nascimento:</strong> {{ funcionario.data_nascimento|date:"d/m/Y" }}</p>
+    <form method="post" action="{% url 'add_skill' funcionario.id %}">
+        {% csrf_token %}
+        <input id="skillInput" name="skill" type="text" placeholder="Digite a skill">
+        <button type="submit">Adicionar Skill</button>
+    </form>
+    <h2>Skills</h2>
+    <ul id="skillsUl">
+        {% for skill in funcionario.skills.all %}
+            <li>
+                {{ skill.nome }}
+                <a href="{% url 'remove_skill' funcionario.id skill.id %}" class="remove-skill">Remover</a>
+            </li>
+        {% empty %}
+            <li>Não há skills cadastradas.</li>
+        {% endfor %}
+    </ul>
     <a href="{% url 'main' %}">Voltar</a>
 {% endblock %}

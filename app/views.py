@@ -1,12 +1,12 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm as CustomAuthenticationForm
 from .forms import UserRegistrationForm
-from django.urls import path
-from .models import Funcionario
-from django.shortcuts import render, get_object_or_404
-from . import views
-import json
+from .models import Funcionario, Skill
+from django.template.loader import render_to_string
+from django.http import JsonResponse
+
+
 
 def minha_view(request):
     return render(request, 'index.html')
@@ -40,9 +40,48 @@ def lista_funcionarios(request):
     print(funcionarios)
     return render(request, 'main.html', {'funcionarios': funcionarios})
 
-
-
 def funcionario_detalhes(request, funcionario_id):
     funcionario = get_object_or_404(Funcionario, id=funcionario_id)
     return render(request, 'skills.html', {'funcionario': funcionario})
+
+def add_skill(request, funcionario_id):
+    funcionario = get_object_or_404(Funcionario, id=funcionario_id)
+    
+    if request.method == 'POST':
+        skill_name = request.POST.get('skill')
+        
+        if skill_name:
+            # Obtém ou cria a skill
+            skill, created = Skill.objects.get_or_create(nome=skill_name)
+            
+            # Adiciona a skill ao funcionário
+            funcionario.skills.add(skill)
+            
+            # Verifica se a requisição é AJAX
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                # Renderiza a lista de skills para retorno via AJAX
+                skills_html = render_to_string('skills_list.html', {'funcionario': funcionario})
+                return JsonResponse({'skills_html': skills_html})
+        
+        # Redireciona para a página de detalhes do funcionário
+        return redirect('funcionario_detail', funcionario_id=funcionario.id)
+
+    # Caso a requisição não seja POST, retorna um redirecionamento padrão
+    return redirect('funcionario_detail', funcionario_id=funcionario.id)
+
+def remove_skill(request, funcionario_id, skill_id):
+    funcionario = get_object_or_404(Funcionario, id=funcionario_id)
+    skill = get_object_or_404(Skill, id=skill_id)
+    
+    if skill in funcionario.skills.all():
+        funcionario.skills.remove(skill)
+        funcionario.save()  # Salva as alterações no banco de dados
+        
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        # Renderiza a lista de skills para retorno via AJAX
+        skills_html = render_to_string('skills_list.html', {'funcionario': funcionario})
+        return JsonResponse({'skills_html': skills_html})
+
+    # Redireciona para a página de detalhes do funcionário
+    return redirect('funcionario_detail', funcionario_id=funcionario.id)
 

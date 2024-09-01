@@ -17,7 +17,7 @@
                 <div class="funcionarioContainer">
                     <img class="funcionarioProfileImage" src="{% static 'app/img/user.jpg' %}" alt="">
                     <li class="">
-                        <a href="{% url 'skills.html' funcionario.id %}">{{ funcionario.nome }}</a>
+                        <a href="{% url 'funcionario_detail' funcionario.id %}">{{ funcionario.nome }}</a>
                     </li>
                 </div>
             {% endfor %}
