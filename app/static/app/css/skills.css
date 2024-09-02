@@ -27,7 +27,15 @@ a{
     font-size: 20px;
 }
 
+.skillsContainer p{
+    margin: 0 0 20px 0;
+}
+
 h1{
+    margin: 10px 0;
+}
+
+h2{
     margin: 10px 0;
 }
 
@@ -75,7 +83,7 @@ button:hover{
     align-items: left;
     justify-content: center;
     overflow-y: scroll;
-
+    margin: 0 0 10px 0;
     width: 90%;
     border-radius: 5px;
     background-color: rgb(243, 243, 243);
@@ -92,4 +100,5 @@ button:hover{
 
 .skillsList ul{
     margin: 0;
+    height: 100%;
 }
