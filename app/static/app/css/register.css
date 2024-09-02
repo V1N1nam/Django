@@ -116,11 +116,12 @@ ul{
     outline: none;
     color: white;
     font-size: 20px;
+    transition: .3s;
     
     background-color: rgb(236, 43, 75);
     border: none;
 }
 
 .signinBtn:hover, .signupBtn:hover{
-    opacity: 80%;
+    opacity: 60%;
 }

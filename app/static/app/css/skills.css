@@ -59,9 +59,14 @@ button{
     outline: none;
     color: white;
     font-size: 20px;
+    transition: .3s;
     
     background-color: rgb(236, 43, 75);
     border: none;
+}
+
+button:hover{
+    opacity: 60%;
 }
 
 .skillsList{

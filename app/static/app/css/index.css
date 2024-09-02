@@ -144,11 +144,12 @@ a{
     outline: none;
     color: white;
     font-size: 20px;
+    transition: .3s;
     
 }
 
 .signinBtn:hover, .signupBtn:hover{
-    opacity: 80%;
+    opacity: 60%;
 }
 
 a{
