@@ -16,24 +16,28 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{{ funcionario.nome }}</h1>
-    <p><strong>Cargo:</strong> {{ funcionario.cargo }}</p>
-    <p><strong>Data de Nascimento:</strong> {{ funcionario.data_nascimento|date:"d/m/Y" }}</p>
-    <form method="post" action="{% url 'add_skill' funcionario.id %}">
-        {% csrf_token %}
-        <input id="skillInput" name="skill" type="text" placeholder="Digite a skill">
-        <button type="submit">Adicionar Skill</button>
-    </form>
-    <h2>Skills</h2>
-    <ul id="skillsUl">
-        {% for skill in funcionario.skills.all %}
-            <li>
-                {{ skill.nome }}
-                <a href="{% url 'remove_skill' funcionario.id skill.id %}" class="remove-skill">Remover</a>
-            </li>
-        {% empty %}
-            <li>Não há skills cadastradas.</li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'main' %}">Voltar</a>
+    <div class="skillsContainer">
+        <h1>{{ funcionario.nome }}</h1>
+        <p><strong>Cargo:</strong> {{ funcionario.cargo }}</p>
+        <p><strong>Data de Nascimento:</strong> {{ funcionario.data_nascimento|date:"d/m/Y" }}</p>
+        <form method="post" action="{% url 'add_skill' funcionario.id %}">
+            {% csrf_token %}
+            <input id="skillInput" name="skill" type="text" placeholder="Digite a skill">
+            <button type="submit">Adicionar</button>
+        </form>
+        <h2>Skills</h2>
+        <div class="skillsList">
+            <ul id="skillsUl">
+                {% for skill in funcionario.skills.all %}
+                    <li>
+                        {{ skill.nome }}
+                        <a href="{% url 'remove_skill' funcionario.id skill.id %}" class="remove-skill"><img src="{% static 'app/img/icons/delete.png' %}" alt=""></a>
+                    </li>
+                {% empty %}
+                    <li>Não há skills cadastradas.</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <a href="{% url 'main' %}">Voltar</a>
+    </div>
 {% endblock %}

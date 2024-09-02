@@ -1,0 +1,90 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    font-family: Calibri;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.skillsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 500px;
+    height: 600px;
+    padding: 20px;
+    background-color: white;
+    font-size: 20px;
+}
+
+h1{
+    margin: 10px 0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: 300px;
+    height: 20px;
+    padding: 15px 15px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    background-color: rgb(243, 243, 243);
+    box-shadow: inset 0 0 2px #b8bbbe;
+    font-size: 20px;
+    color:rgb(73, 73, 73);
+}
+
+button{
+    width: 150px;
+    margin: 20px 10px;
+    height: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    
+    background-color: rgb(236, 43, 75);
+    border: none;
+}
+
+.skillsList{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    overflow-y: scroll;
+
+    width: 90%;
+    border-radius: 5px;
+    background-color: rgb(243, 243, 243);
+    box-shadow: inset 0 0 2px #b8bbbe;
+}
+
+.skillsList a img{
+    width: 20px;
+}
+
+.skillsList li{
+    margin: 5px 0;
+}
+
+.skillsList ul{
+    margin: 0;
+}
