@@ -26,6 +26,13 @@ a{
     font-size: 30px;
 }
 
+.funcionarioOuterDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 .mainContainer{
     display: flex;
     flex-direction: column;
@@ -61,21 +68,17 @@ a{
     border: none;
     cursor: pointer;
     transition: 0.3s;
+    font-size: 30px;
+    font-family: Calibri;
 }
 
 .funcionarioContainer:hover{
     background-color: rgb(190, 191, 201);
 }
 
-.funcionarioContainer a{
-    font-size: 30px;
-    font-family: Calibri;
-}
-
 .funcionariosNomes li{
-    font-size: 20px;
+    font-size: 30px;
     margin: 0 50px;
-    cursor: pointer;
 }
 
 .funcionarioProfileImage{
