@@ -136,11 +136,11 @@ a{
 }
 
 .addBtn img, .editBtn img, .deleteBtn img{
-    width: 50px;
+    width: 40px;
     margin: 0;
     object-fit: cover;
 }
 
 .deleteBtn img{
-    width: 55px;
+    width: 45px;
 }
