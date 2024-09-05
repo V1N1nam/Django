@@ -1,0 +1,18 @@
+.formMain{
+    text-align: center;
+    justify-content: space-between;
+}
+
+.containerMain{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.columns th{
+    padding: 30px;
+}
+
+.valuesColumns td{ 
+    padding: 0px 30px;
+}

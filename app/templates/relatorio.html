@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block header %}
+{% endblock %}
+
+{% block title %}
+    Funcionário
+{% endblock %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'app/css/relatorio.css' %}">
+    <script src="{% static 'app/js/darktheme.js' %}" defer></script>
+    <script src="{% static 'app/js/relatorio.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+    <form class="formMain" method="get">
+        <label for="cargo">Cargo:</label>
+        <select name="cargo" id="cargo">
+            <option value="">Todos</option>
+            {% for cargo in cargos %}
+                <option value="{{ cargo }}">{{ cargo }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="skill">Skill:</label>
+        <select name="skill" id="skill">
+            <option value="">Todas</option>
+            {% for skill in skills %}
+                <option value="{{ skill.nome }}">{{ skill.nome }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Gerar Relatório</button>
+    </form>
+
+    <div class="containerMain">
+        <h2>Relatório de Funcionários</h2>
+        <table>
+            <thead>
+                <tr class="columns">
+                    <th>Nome</th>
+                    <th>Cargo</th>
+                    <th>Data de Nascimento</th>
+                    <th>Skills</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for funcionario in funcionarios %}
+                <tr class="valuesColumns">
+                    <td>{{ funcionario.nome }}</td>
+                    <td>{{ funcionario.cargo }}</td>
+                    <td>{{ funcionario.data_nascimento|date:"d/m/Y" }}</td>
+                    <td>{{ funcionario.skills.all|join:", " }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a href="{% url 'main' %}">Voltar</a>
+{% endblock %}

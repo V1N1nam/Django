@@ -85,3 +85,22 @@ def remove_skill(request, funcionario_id, skill_id):
     # Redireciona para a página de detalhes do funcionário
     return redirect('funcionario_detail', funcionario_id=funcionario.id)
 
+def relatorio_dinamico(request):
+    # Filtros
+    cargo = request.GET.get('cargo')
+    skill = request.GET.get('skill')
+
+    funcionarios = Funcionario.objects.all()
+
+    if cargo:
+        funcionarios = funcionarios.filter(cargo=cargo)
+    if skill:
+        funcionarios = funcionarios.filter(skills__nome=skill)
+
+    context = {
+        'funcionarios': funcionarios,
+        'cargos': Funcionario.objects.values_list('cargo', flat=True).distinct(),
+        'skills': Skill.objects.all(),
+    }
+
+    return render(request, 'relatorio.html', context)
