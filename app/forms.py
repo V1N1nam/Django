@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from .models import CalendarioItem
 
 class UserRegistrationForm(UserCreationForm):
 
@@ -47,3 +48,8 @@ class CustomAuthenticationForm(AuthenticationForm):
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'id': 'id_password'}),
         label='Senha'
     )
+
+class CalendarioItemForm(forms.ModelForm):
+    class Meta:
+        model = CalendarioItem
+        fields = ['data_inicio', 'data_fim', 'titulo', 'descricao']

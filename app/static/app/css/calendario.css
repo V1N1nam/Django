@@ -1,0 +1,40 @@
+
+*{
+    font-family: arial;
+}
+
+#calendario {
+    width: 700px;
+    height: 500px;
+    margin: 0 auto;
+    border: #000000 solid 1px;
+  }
+
+.fc-toolbar-title {
+    color: #070e14;
+    font-family: 'Arial', sans-serif;
+}
+#calendario .fc-button {
+    background-color: rgb(236, 43, 75);
+    color: white;
+}
+#calendario .fc-button:hover {
+    background-color: rgb(236, 43, 75);
+    scale: 0.9;
+}
+
+#calendario .fc-daygrid-day {
+    border: 1px solid #000000; /* Cor das bordas das células */
+}
+
+#calendario .fc-col-header-cell {
+    background-color: #f5f5f5; /* Cor de fundo dos cabeçalhos */
+    color: #070e14; /* Cor do texto */
+    font-family: 'Arial', sans-serif; /* Fonte do texto */
+    font-weight: bold; /* Negrito */
+    border: 1px solid #ddd; /* Cor e espessura da borda */
+}
+
+.fc-event {
+    cursor: url('/static/app/img/lixeira.png'), pointer;
+}

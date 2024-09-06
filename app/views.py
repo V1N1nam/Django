@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm as CustomAuthenticationForm
 from .forms import UserRegistrationForm
-from .models import Funcionario, Skill
+from .models import Funcionario, Skill, CalendarioItem
 from django.template.loader import render_to_string
 from django.http import JsonResponse
+from .forms import CalendarioItemForm
 
 
 
@@ -104,3 +105,40 @@ def relatorio_dinamico(request):
     }
 
     return render(request, 'relatorio.html', context)
+
+def calendario_eventos(request):
+    eventos = CalendarioItem.objects.all()
+    eventos_lista = []
+
+    for evento in eventos:
+        eventos_lista.append({
+            'id': evento.id,  # Adicionado para garantir que o ID esteja disponível
+            'title': evento.titulo,
+            'start': evento.data_inicio.isoformat(),
+            'end': evento.data_fim.isoformat() if evento.data_fim else evento.data_inicio.isoformat(),
+            'description': evento.descricao,
+        })
+
+    return JsonResponse(eventos_lista, safe=False)
+
+def calendarioView(request):
+    items = CalendarioItem.objects.all().order_by('data_inicio')
+    return render(request, 'calendario.html', {'items': items})
+
+def adicionar_item_view(request):
+    if request.method == 'POST':
+        form = CalendarioItemForm(request.POST)
+        if form.is_valid():
+            form.save()  # Salva o novo item no banco de dados
+            return redirect('calendario')  # Redireciona para a página do calendário após salvar
+    else:
+        form = CalendarioItemForm()
+    
+    return render(request, 'adicionar_item.html', {'form': form})
+
+def deletar_evento(request, evento_id):
+    if request.method == 'POST':
+        evento = get_object_or_404(CalendarioItem, id=evento_id)
+        evento.delete()
+        return JsonResponse({'status': 'success'})
+    return JsonResponse({'status': 'error'}, status=400)
