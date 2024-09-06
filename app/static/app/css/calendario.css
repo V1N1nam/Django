@@ -38,3 +38,37 @@
 .fc-event {
     cursor: url('/static/app/img/lixeira.png'), pointer;
 }
+
+form {
+    max-width: 605px;
+    margin: 40px auto;
+    padding: 50px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="text"],
+form input[type="date"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: rgb(236, 43, 75);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+    background-color: rgb(236, 43, 75);
+}
+
