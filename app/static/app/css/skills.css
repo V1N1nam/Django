@@ -86,7 +86,6 @@ button:hover{
     margin: 0 0 10px 0;
     width: 90%;
     border-radius: 5px;
-    background-color: rgb(243, 243, 243);
     box-shadow: inset 0 0 2px #b8bbbe;
 }
 
@@ -95,7 +94,12 @@ button:hover{
 }
 
 .skillsList li{
-    margin: 5px 0;
+    border: 1px solid rgba(129, 129, 129, 0.377);
+    border-width: 2px 2px 0 2px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: -40px;
+    padding: 3px;
 }
 
 .skillsList ul{
