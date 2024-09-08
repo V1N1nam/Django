@@ -31,22 +31,24 @@
                 </a>
             {% endfor %}
         </ul>
-    </div>
-    <div class="actions">
-        <div class="actionsRight">
-            <button class="reportBtn" onclick="location.href='{% url 'relatorio_dinamico' %}'">
-                <img src="{% static 'app/img/icons/report.png' %}" alt="">
-            </button>
         
-            <button class="calendarBtn" onclick="location.href='{% url 'calendario' %}'">
-                <img src="{% static 'app/img/icons/calendar.png' %}" alt="">
-            </button>
-        </div>
-
-        <div class="actionsLeft">
-            <button class="addBtn"><img src="{% static 'app/img/icons/add.png' %}" alt=""></button>
-            <button class="editBtn"><img src="{% static 'app/img/icons/edit.png' %}" alt=""></button>
-            <button class="deleteBtn"><img src="{% static 'app/img/icons/delete.png' %}" alt=""></button>
+        <div class="actions">
+            <div class="actionsRight">
+                <button class="reportBtn" onclick="location.href='{% url 'relatorio_dinamico' %}'">
+                    <img src="{% static 'app/img/icons/report.png' %}" alt="">
+                </button>
+            
+                <button class="calendarBtn" onclick="location.href='{% url 'calendario' %}'">
+                    <img src="{% static 'app/img/icons/calendar.png' %}" alt="">
+                </button>
+            </div>
+    
+            <div class="actionsLeft">
+                <button class="addBtn"><img src="{% static 'app/img/icons/add.png' %}" alt=""></button>
+                <button class="editBtn"><img src="{% static 'app/img/icons/edit.png' %}" alt=""></button>
+                <button class="deleteBtn"><img src="{% static 'app/img/icons/delete.png' %}" alt=""></button>
+            </div>
         </div>
     </div>
+
 {% endblock %}

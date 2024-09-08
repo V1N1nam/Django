@@ -167,7 +167,7 @@ function changeTheme(switchToggle) {
         }
     }
 
-    else if (window.location.pathname === '/main/') {
+    /*else if (window.location.pathname === '/main/') {
         if (switchToggle === 1) {
             document.body.style.color = 'white';
             document.body.style.backgroundImage = 'none';
@@ -181,7 +181,7 @@ function changeTheme(switchToggle) {
             })
             document.querySelectorAll('.funcionarioContainer').forEach(element => {
                 element.style.border = '2px solid white';
-                element.style.backgroundColor = 'transparent';
+                //element.style.backgroundColor = 'transparent';
             })
             document.querySelectorAll('button').forEach(element => {
                 element.style.color = 'white';
@@ -201,13 +201,13 @@ function changeTheme(switchToggle) {
             })
             document.querySelectorAll('.funcionarioContainer').forEach(element => {
                 element.style.border = 'none';
-                element.style.backgroundColor = 'rgb(210, 211, 221)';
+                //element.style.backgroundColor = 'rgb(210, 211, 221)';
             })
             document.querySelectorAll('button').forEach(element => {
                 element.style.color = 'black';
             }) 
         }
-    }
+    }*/
 
     else {
         if (switchToggle === 1) {
