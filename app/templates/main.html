@@ -17,8 +17,14 @@
                 <a class="funcionarioOuterDiv" href="{% url 'funcionario_detail' funcionario.id %}">
                     <div class="funcionarioContainer">
                         <img class="funcionarioProfileImage" src="{% static 'app/img/user.jpg' %}" alt="">
-                        <li class="">
+                        <li class="infoUser">
                             {{ funcionario.nome }}
+                        </li>
+                        <li class="infoUser">
+                            {{ funcionario.cargo }}
+                        </li>
+                        <li class="infoUser">
+                            {{ funcionario.data_nascimento|date:"d/m/Y" }}
                         </li>
                     </div>
                 </a>
