@@ -31,9 +31,6 @@ ALLOWED_HOSTS = [
     '689a-2804-14c-87b9-91cd-b162-a548-7823-50ff.ngrok-free.app',
 ]
 
-
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -104,7 +101,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/

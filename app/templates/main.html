@@ -11,12 +11,13 @@
 
 {% block content %}
     <div class="mainContainer">
-        <h1>Lista de Funcionários</h1>
+        <div class="containerHeader">
+            <h1>Lista de Funcionários</h1>            
+        </div>
         <ul class="funcionariosNomes">
             {% for funcionario in funcionarios %}
                 <a class="funcionarioOuterDiv" href="{% url 'funcionario_detail' funcionario.id %}">
                     <div class="funcionarioContainer">
-                        <img class="funcionarioProfileImage" src="{% static 'app/img/user.jpg' %}" alt="">
                         <li class="infoUser">
                             {{ funcionario.nome }}
                         </li>
@@ -32,10 +33,20 @@
         </ul>
     </div>
     <div class="actions">
-        <button class="addBtn"><img src="{% static 'app/img/icons/add.png' %}" alt=""></button>
-        <button class="editBtn"><img src="{% static 'app/img/icons/edit.png' %}" alt=""></button>
-        <button class="deleteBtn"><img src="{% static 'app/img/icons/delete.png' %}" alt=""></button>
+        <div class="actionsRight">
+            <button class="reportBtn" onclick="location.href='{% url 'relatorio_dinamico' %}'">
+                <img src="{% static 'app/img/icons/report.png' %}" alt="">
+            </button>
+        
+            <button class="calendarBtn" onclick="location.href='{% url 'calendario' %}'">
+                <img src="{% static 'app/img/icons/calendar.png' %}" alt="">
+            </button>
+        </div>
+
+        <div class="actionsLeft">
+            <button class="addBtn"><img src="{% static 'app/img/icons/add.png' %}" alt=""></button>
+            <button class="editBtn"><img src="{% static 'app/img/icons/edit.png' %}" alt=""></button>
+            <button class="deleteBtn"><img src="{% static 'app/img/icons/delete.png' %}" alt=""></button>
+        </div>
     </div>
-    <a href="{% url 'relatorio_dinamico' %}">Relatório</a>
-    <a href="{% url 'calendario' %}">Calendário</a>
 {% endblock %}

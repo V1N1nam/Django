@@ -177,6 +177,11 @@ function changeTheme(switchToggle) {
             });
             document.querySelectorAll('.mainContainer').forEach(element => {
                 element.style.border = '2px solid white';
+                element.style.backgroundColor = 'rgb(30, 33, 40)';
+            })
+            document.querySelectorAll('.funcionarioContainer').forEach(element => {
+                element.style.border = '2px solid white';
+                element.style.backgroundColor = 'transparent';
             })
             document.querySelectorAll('button').forEach(element => {
                 element.style.color = 'white';
@@ -191,7 +196,12 @@ function changeTheme(switchToggle) {
                 element.style.color = 'black';
             });
             document.querySelectorAll('.mainContainer').forEach(element => {
-                element.style.border = '2px solid black';
+                element.style.border = 'none';
+                element.style.backgroundColor = 'white';
+            })
+            document.querySelectorAll('.funcionarioContainer').forEach(element => {
+                element.style.border = 'none';
+                element.style.backgroundColor = 'rgb(210, 211, 221)';
             })
             document.querySelectorAll('button').forEach(element => {
                 element.style.color = 'black';
