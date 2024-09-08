@@ -167,7 +167,7 @@ function changeTheme(switchToggle) {
         }
     }
 
-    /*else if (window.location.pathname === '/main/') {
+    else if (window.location.pathname === '/main/') {
         if (switchToggle === 1) {
             document.body.style.color = 'white';
             document.body.style.backgroundImage = 'none';
@@ -207,7 +207,7 @@ function changeTheme(switchToggle) {
                 element.style.color = 'black';
             }) 
         }
-    }*/
+    }
 
     else {
         if (switchToggle === 1) {

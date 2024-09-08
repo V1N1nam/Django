@@ -82,7 +82,7 @@ a{
 
 .funcionariosNomes li{
     font-size: 20px;
-    margin: 0 50px;
+    margin: 0 20px;
 }
 
 .funcionarioOuterDiv:nth-child(odd) .funcionarioContainer {
@@ -90,16 +90,12 @@ a{
     transition: background-color 0.3s;
 }
 
-.funcionarioOuterDiv:nth-child(odd):hover .funcionarioContainer {
-    background-color: rgb(255, 129, 129);
-}
-
 .funcionarioOuterDiv:nth-child(even) .funcionarioContainer {
     background-color: #ffeded; /* Cor para linhas pares */
     transition: background-color 0.3s;
 }
 
-.funcionarioOuterDiv:nth-child(even):hover .funcionarioContainer {
+.funcionarioOuterDiv:hover .funcionarioContainer {
     background-color: rgb(255, 129, 129);
 }
 
