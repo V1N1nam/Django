@@ -35,7 +35,7 @@
                 </div>
                 <div class="btns">
                 <button class="signupBtn" type="submit">Cadastrar</button>
-                <button class="signinBtn" onclick="redirectWithDelay('{% url 'index' %}')">Entrar</button>
+                <button class="signinBtn" onclick="window.location.href = '{% url 'index' %}'">Entrar</button>
                 </div>
             </form>
         </section>

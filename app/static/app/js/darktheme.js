@@ -178,14 +178,20 @@ function changeTheme(switchToggle) {
             document.querySelectorAll('.mainContainer').forEach(element => {
                 element.style.border = '2px solid white';
                 element.style.backgroundColor = 'rgb(30, 33, 40)';
-            })
+            });
+
+            document.querySelectorAll('.funcionariosNomes').forEach(element => {
+                element.style.border = '1px solid white';
+            });
+
             document.querySelectorAll('.funcionarioContainer').forEach(element => {
-                element.style.border = '2px solid white';
-                //element.style.backgroundColor = 'transparent';
-            })
+                element.style.borderTop = '2px solid white';
+                element.style.backgroundColor = 'transparent';
+            });
+
             document.querySelectorAll('button').forEach(element => {
                 element.style.color = 'white';
-            })
+            });
         }
 
         else {
