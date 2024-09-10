@@ -22,19 +22,32 @@
             <input id="skillInput" name="skill" type="text" placeholder="Digite a skill">
             <button type="submit">Adicionar</button>
         </form>
-        <h2>Skills</h2>
         <div class="skillsList">
-            <ul id="skillsUl">
-                {% for skill in funcionario.skills.all %}
-                    <li>
-                        {{ skill.nome }}
-                        <a href="{% url 'remove_skill' funcionario.id skill.id %}" class="remove-skill"><img src="{% static 'app/img/icons/delete.png' %}" alt=""></a>
-                    </li>
-                {% empty %}
-                    <li>Não há skills cadastradas.</li>
-                {% endfor %}
-            </ul>
+            <table id="skillsTable">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for skill in funcionario.skills.all %}
+                        <tr>
+                            <td>{{ skill.nome }}</td>
+                            <td>
+                                <a href="{% url 'remove_skill' funcionario.id skill.id %}" class="remove-skill">
+                                    <img src="{% static 'app/img/icons/delete.png' %}" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="2">Não há skills cadastradas.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
-        <a href="{% url 'main' %}">Voltar</a>
+        <button class="goBackBtn" onclick="location.href='{% url 'main' %}'">Voltar</button>
     </div>
 {% endblock %}

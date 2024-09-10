@@ -8,11 +8,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size:18px;
 }
 
 .containerMain {
     max-width: 1200px;
-    min-height: 55vh;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
@@ -52,7 +52,7 @@ h2 {
 }
 
 .formMain select:focus {
-    border-color: #c23131;
+    border-color: #ffd1d1;
 }
 
 button[type="submit"] {
@@ -63,10 +63,16 @@ button[type="submit"] {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-size: 20px;
 }
 
 button[type="submit"]:hover {
     background-color: #7e0000;
+}
+
+.tableDiv {
+    height: 45vh;
+    overflow-y: scroll;
 }
 
 table {
