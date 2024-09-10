@@ -11,26 +11,27 @@
 
 {% block content %}
     <div class="mainContainer">
-        <div class="containerHeader">
-            <h1>Lista de Funcionários</h1>            
-        </div>
-        <ul class="funcionariosNomes">
-            {% for funcionario in funcionarios %}
-                <a class="funcionarioOuterDiv" href="{% url 'funcionario_detail' funcionario.id %}">
-                    <div class="funcionarioContainer">
-                        <li class="infoUser">
-                            {{ funcionario.nome }}
-                        </li>
-                        <li class="infoUser">
-                            {{ funcionario.cargo }}
-                        </li>
-                        <li class="infoUser">
-                            {{ funcionario.data_nascimento|date:"d/m/Y" }}
-                        </li>
-                    </div>
-                </a>
-            {% endfor %}
-        </ul>
+        <h1>Funcionários</h1>
+        
+        <table class="funcionariosNomes">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cargo</th>
+                    <th>Data de Nascimento</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for funcionario in funcionarios %}
+                <tr class="funcionarioOuterDiv" onclick="window.location='{% url 'funcionario_detail' funcionario.id %}'">
+                    <td class="infoUser">{{ funcionario.nome }}</td>
+                    <td class="infoUser">{{ funcionario.cargo }}</td>
+                    <td class="infoUser">{{ funcionario.data_nascimento|date:"d/m/Y" }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
         
         <div class="actions">
             <div class="actionsRight">
