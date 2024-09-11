@@ -116,9 +116,18 @@ LOGIN_REDIRECT_URL = '/main/'  # URL para onde o usuário será redirecionado ap
 
 LOGIN_URL = '/'
 
+# Tempo de vida da sessão em segundos (30 minutos)
+SESSION_COOKIE_AGE = 30 * 60
+
+# Encerrar a sessão ao fechar o navegador
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+# Tempo não reseta a cada requisição
+SESSION_SAVE_EVERY_REQUEST = True
+
 # Definir o formato de data padrão
-DATE_FORMAT = 'd/m/Y'  # Exemplo: 24/08/2024
+DATE_FORMAT = 'd/m/Y'  # Exemplo: 01/01/2024
 
 # Definir o formato de data e hora padrão
-DATETIME_FORMAT = 'd/m/Y H:i:s'  # Exemplo: 24/08/2024 15:30:00
+DATETIME_FORMAT = 'd/m/Y H:i:s'  # Exemplo: 01/01/2024 12:30:40
 
