@@ -6,8 +6,7 @@ from .models import Funcionario, Skill, CalendarioItem
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 from .forms import CalendarioItemForm
-
-
+from django.contrib.auth.decorators import login_required
 
 def minha_view(request):
     return render(request, 'index.html')
@@ -33,18 +32,22 @@ def login_view(request):
         form = CustomAuthenticationForm()
     return render(request, 'index.html', {'form': form})
 
+@login_required(login_url='login')
 def principal_view(request):
     return render(request, 'main.html')
 
+@login_required(login_url='login')
 def lista_funcionarios(request):
     funcionarios = Funcionario.objects.all()
     print(funcionarios)
     return render(request, 'main.html', {'funcionarios': funcionarios})
 
+@login_required(login_url='login')
 def funcionario_detalhes(request, funcionario_id):
     funcionario = get_object_or_404(Funcionario, id=funcionario_id)
     return render(request, 'skills.html', {'funcionario': funcionario})
 
+@login_required(login_url='login')
 def add_skill(request, funcionario_id):
     funcionario = get_object_or_404(Funcionario, id=funcionario_id)
     
@@ -70,6 +73,7 @@ def add_skill(request, funcionario_id):
     # Caso a requisição não seja POST, retorna um redirecionamento padrão
     return redirect('funcionario_detail', funcionario_id=funcionario.id)
 
+@login_required(login_url='login')
 def remove_skill(request, funcionario_id, skill_id):
     funcionario = get_object_or_404(Funcionario, id=funcionario_id)
     skill = get_object_or_404(Skill, id=skill_id)
@@ -86,6 +90,7 @@ def remove_skill(request, funcionario_id, skill_id):
     # Redireciona para a página de detalhes do funcionário
     return redirect('funcionario_detail', funcionario_id=funcionario.id)
 
+@login_required(login_url='login')
 def relatorio_dinamico(request):
     # Filtros
     cargo = request.GET.get('cargo')
@@ -106,6 +111,7 @@ def relatorio_dinamico(request):
 
     return render(request, 'relatorio.html', context)
 
+@login_required(login_url='login')
 def calendario_eventos(request):
     eventos = CalendarioItem.objects.all()
     eventos_lista = []
@@ -121,10 +127,12 @@ def calendario_eventos(request):
 
     return JsonResponse(eventos_lista, safe=False)
 
+@login_required(login_url='login')
 def calendarioView(request):
     items = CalendarioItem.objects.all().order_by('data_inicio')
     return render(request, 'calendario.html', {'items': items})
 
+@login_required(login_url='login')
 def adicionar_item_view(request):
     if request.method == 'POST':
         form = CalendarioItemForm(request.POST)
@@ -136,6 +144,7 @@ def adicionar_item_view(request):
     
     return render(request, 'adicionar_item.html', {'form': form})
 
+@login_required(login_url='login')
 def deletar_evento(request, evento_id):
     if request.method == 'POST':
         evento = get_object_or_404(CalendarioItem, id=evento_id)
