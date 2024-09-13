@@ -22,15 +22,19 @@
 </head>
 {% block content %}
     <h1>Calendário</h1>
-    <div id='calendario'></div>
-    <form id="event-form" method="post" action="{% url 'adicionar_item' %}">
-        {% csrf_token %}
-        <input type="text" id="event-title" name="titulo" placeholder="Título do Evento" required>
-        <input type="date" id="event-start" name="data_inicio" required>
-        <input type="date" id="event-end" name="data_fim">
-        <textarea id="event-description" name="descricao" placeholder="Descrição"></textarea>
-        <button type="submit">Adicionar Evento</button>
-    </form>
-
-    <button class="goBackBtn" onclick="location.href='{% url 'main' %}'">Voltar</button>
+    <div class="pageDiv"> 
+        <div class="pageGrid">
+            <div id='calendario'></div>
+            <form id="event-form" method="post" action="{% url 'adicionar_item' %}">
+                <img class="imgLogo" src="{% static 'app/img/brose_logo.png' %}" alt="">
+                {% csrf_token %}
+                <input type="text" id="event-title" name="titulo" placeholder="Título do Evento" required>
+                <input type="date" id="event-start" name="data_inicio" required>
+                <input type="date" id="event-end" name="data_fim">
+                <textarea id="event-description" name="descricao" placeholder="Descrição"></textarea>
+                <button type="submit">Adicionar Evento</button>
+                <button class="goBackBtn" onclick="location.href='{% url 'main' %}'">Voltar</button>
+            </form>
+        </div>
+    </div>
 {% endblock %}
