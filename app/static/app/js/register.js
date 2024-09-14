@@ -1,10 +1,10 @@
 document.getElementById('abc').addEventListener('input', function() {
     let pin = this.value;
-    let botao = document.querySelector('.signupBtn');
+    let cadastroBtn = document.querySelector('.signupBtn');
     
     if (pin === '12345') {
-        botao.style.display = 'block';
+        cadastroBtn.style.backgroundColor = 'rgb(236, 43, 75)';
     } else {
-        botao.style.display = 'none';
+        cadastroBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.164)';
     }
 });

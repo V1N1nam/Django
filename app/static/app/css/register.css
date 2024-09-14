@@ -102,10 +102,6 @@ ul{
     height: 60px;
 }
 
-.signupBtn{
-    display: none;
-}
-
 .signinBtn, .signupBtn{
     width: 180px;
     margin: 0 10px;
@@ -120,6 +116,10 @@ ul{
     
     background-color: rgb(236, 43, 75);
     border: none;
+}
+
+.signupBtn {
+    background-color: rgba(255, 255, 255, 0.164);
 }
 
 .signinBtn:hover, .signupBtn:hover{
