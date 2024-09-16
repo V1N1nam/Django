@@ -123,7 +123,7 @@ SESSION_COOKIE_AGE = 30 * 60
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Tempo não reseta a cada requisição
-SESSION_SAVE_EVERY_REQUEST = True
+SESSION_SAVE_EVERY_REQUEST = False
 
 # Definir o formato de data padrão
 DATE_FORMAT = 'd/m/Y'  # Exemplo: 01/01/2024
