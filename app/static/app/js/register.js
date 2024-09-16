@@ -10,5 +10,3 @@ document.getElementById('abc').addEventListener('input', function() {
         cadastroBtn.style.color = 'rgb(238, 238, 238)';
     }
 });
-
-color: rgb(238, 238, 238);
