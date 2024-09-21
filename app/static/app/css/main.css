@@ -10,14 +10,14 @@ body {
     color: #333;
     display: flex;
     justify-content: center;
-    margin: 0 30px;
+    margin: 0;
 }
 
 /* Estilizando o container da esquerda */
 .mainContainer {
     display: grid;
-    grid-template-columns: 1fr 2.5fr;
-    column-gap: 40px;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 200px;
     width: 100%;
     height: 100vh;
 }
@@ -49,7 +49,6 @@ button {
     background-color: #c23131;
     font-weight: bold;
     font-size: 25px;
-    padding: 0 15px;
     width: 100%;
     height: 50px;
     font-family: Calibri;
@@ -72,7 +71,7 @@ button:hover {
     max-width: 1200px;
     background-color: white;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 20px 40px 20px 20px;
     text-align: center;
     overflow-y: scroll;
 }
@@ -80,6 +79,7 @@ button:hover {
 .rightContainer h1 {
     margin: 20px 0 40px 0;
     font-weight: bold;
+    font-size: 50px;
     color: #b90000;
 }
 
