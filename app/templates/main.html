@@ -35,12 +35,12 @@
         <div class="rightContainer">
             <h1>Funcionários</h1>
             <div class="divTabela">
-                <table class="funcionariosNomes">
+                <table id="funcionariosTabela" class="funcionariosNomes">
                     <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Cargo</th>
-                            <th>Data de Nascimento</th>
+                            <th onclick="sortTable(0)">Nome</th>
+                            <th onclick="sortTable(1)">Cargo</th>
+                            <th onclick="sortTable(2)">Data de Nascimento</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,4 +56,5 @@
             </div>
         </div>
     </div>
+    <script src="{% static 'app/js/sortMainTable.js' %}"></script>
 {% endblock %}
