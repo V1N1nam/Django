@@ -41,7 +41,7 @@ function sortTable(column, tableColumn) {
             let dateA = cellA.split("/").reverse().join("-");
             let dateB = cellB.split("/").reverse().join("-");
 
-            return isAscending ? (new Date(dateA) - new Date(dateB)) : (new Date(dateB) - new Date(dateA));
+            return isAscending ? (new Date(dateB) - new Date(dateA)) : (new Date(dateA) - new Date(dateB));
         }
 
         // Converter para número se for possível (para outros tipos de dado)
