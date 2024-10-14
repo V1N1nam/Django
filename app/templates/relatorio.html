@@ -7,7 +7,6 @@
 
 {% block extrahead %}
     <link rel="stylesheet" href="{% static 'app/css/relatorio.css' %}">
-    <script src="{% static 'app/js/relatorio.js' %}" defer></script>
 {% endblock %}
 
 {% block content %}
@@ -34,13 +33,13 @@
     <div class="containerMain">
         <h2>Relatório de Funcionários</h2>
         <div class="tableDiv">
-            <table>
+            <table id="funcionariosTabela">
                 <thead>
                     <tr class="columns">
-                        <th>Nome</th>
-                        <th>Cargo</th>
-                        <th>Data de Nascimento</th>
-                        <th>Skills</th>
+                        <th onclick="sortTable(0)">Nome</th>
+                        <th onclick="sortTable(1)">Cargo</th>
+                        <th onclick="sortTable(2)">Data de Nascimento</th>
+                        <th onclick="sortTable(3)">Skills</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,4 +56,5 @@
         </div>
     </div>
     <a href="{% url 'main' %}">Voltar</a>
+    <script src="{% static 'app/js/sortTable.js' %}"></script>
 {% endblock %}

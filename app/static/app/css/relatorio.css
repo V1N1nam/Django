@@ -73,21 +73,29 @@ button[type="submit"]:hover {
 .tableDiv {
     height: 45vh;
     overflow-y: scroll;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.205);
 }
 
 table {
     width: 100%;
     border-collapse: separate; /* Altere para 'separate' para suportar border-radius */
     border-spacing: 0;
-    margin-top: 20px;
     border-radius: 10px;
     overflow: hidden; /* Para garantir que as bordas arredondadas apareçam */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 thead {
     background-color: #c23131;
     color: white;
+    cursor: pointer;
+}
+
+thead th {
+    transition: .2s;
+}
+
+thead th:hover {
+    background-color: #9e0000;
 }
 
 .columns th {
