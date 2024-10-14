@@ -1,4 +1,30 @@
-function sortTable(column) {
+function sortTable(column, tableColumn) {
+    columnText = document.getElementById(tableColumn);
+
+    if (columnText && columnText.id === 'th1') {
+        if (columnText.innerHTML === 'Nome ▼') {  // Usar o símbolo real
+            columnText.innerHTML = 'Nome ▲';  // Alterar para o símbolo real
+        } else if (columnText.innerHTML === 'Nome ▲') {  // Comparar com o símbolo real
+            columnText.innerHTML = 'Nome ▼';  // Trocar para o símbolo real
+        }
+    }
+
+    else if (columnText && columnText.id === 'th2') {
+        if (columnText.innerHTML === 'Cargo ▼') {  // Usar o símbolo real
+            columnText.innerHTML = 'Cargo ▲';  // Alterar para o símbolo real
+        } else if (columnText.innerHTML === 'Cargo ▲') {  // Comparar com o símbolo real
+            columnText.innerHTML = 'Cargo ▼';  // Trocar para o símbolo real
+        }
+    }
+
+    else if (columnText && columnText.id === 'th3') {
+        if (columnText.innerHTML === 'Data de Nascimento ▼') {  // Usar o сайmbolo real
+            columnText.innerHTML = 'Data de Nascimento ▲';  // Alterar para o símbolo real
+        } else if (columnText.innerHTML === 'Data de Nascimento ▲') {  // Comparar com o símbolo real
+            columnText.innerHTML = 'Data de Nascimento ▼';  // Trocar para o símbolo real
+        }
+    }
+
     let table = document.getElementById('funcionariosTabela'); // Certifique-se que o seletor está correto
     let rows = Array.from(table.rows).slice(1); // Pegando todas as linhas exceto o cabeçalho
 
