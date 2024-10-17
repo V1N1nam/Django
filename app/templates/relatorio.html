@@ -44,12 +44,16 @@
                 </thead>
                 <tbody>
                     {% for funcionario in funcionarios %}
-                    <tr class="valuesColumns">
-                        <td>{{ funcionario.nome }}</td>
-                        <td>{{ funcionario.cargo }}</td>
-                        <td>{{ funcionario.data_nascimento|date:"d/m/Y" }}</td>
-                        <td>{{ funcionario.skills.all|join:", " }}</td>
-                    </tr>
+                        <tr class="valuesColumns">
+                            <td>{{ funcionario.nome }}</td>
+                            <td>{{ funcionario.cargo }}</td>
+                            <td>{{ funcionario.data_nascimento|date:"d/m/Y" }}</td>
+                            <td>{{ funcionario.skills.all|join:", " }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr class="valuesColumns">
+                            <td style="text-align: center; color: gray" colspan="4">Nenhum funcionário encontrado.</td>
+                        </tr>
                     {% endfor %}
                 </tbody>
             </table>
