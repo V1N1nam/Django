@@ -34,6 +34,8 @@
 
         <div class="rightContainer">
             <h1>Funcionários</h1>
+            <input class="searchBar" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
+
             <div class="divTabela">
                 <table id="funcionariosTabela" class="funcionariosNomes">
                     <thead>
@@ -61,4 +63,5 @@
         </div>
     </div>
     <script src="{% static 'app/js/sortTable.js' %}"></script>
+    <script src="{% static 'app/js/searchTable.js' %}"></script>
 {% endblock %}
