@@ -32,4 +32,10 @@
             </div>
         </div>
     </div>
+    <script>
+        // reload the page to prevent login error
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 {% endblock %}
