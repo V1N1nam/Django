@@ -33,6 +33,8 @@
     <div class="containerMain">
         <h2>Relatório de Funcionários</h2>
         <div class="tableDiv">
+            <input class="searchBar" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
+
             <table id="funcionariosTabela">
                 <thead>
                     <tr class="columns">
@@ -61,4 +63,5 @@
     </div>
     <a href="{% url 'main' %}">Voltar</a>
     <script src="{% static 'app/js/sortTable.js' %}"></script>
+    <script src="{% static 'app/js/searchTable.js' %}"></script>
 {% endblock %}
