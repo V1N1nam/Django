@@ -72,14 +72,14 @@ button:hover {
     min-height: 70vh;
     border-radius: 4px;
     max-width: 1200px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     padding: 20px 40px 20px 20px;
     text-align: center;
 }
 
 .divTabela {
-    height: 80%;
+    height: 70%;
     overflow-y: scroll;
 }
 
