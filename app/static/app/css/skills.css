@@ -108,6 +108,7 @@ button:hover{
 #skillsTable tbody td {
     padding: 5px 12px;
     border-bottom: 1px solid #dddddd;
+    font-size: 16px;
 }
 
 /* Alternância de cores nas linhas */
