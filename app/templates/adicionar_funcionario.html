@@ -15,7 +15,7 @@
         {% csrf_token %}
         {{ form.as_p }}
         <div class="submitButton">
-            <button class="cancelBtn" onclick="location.href='{% url 'main' %}'">Voltar</button>
+            <button type="button"class="cancelBtn" onclick="location.href='{% url 'main' %}'">Voltar</button>
             <button type="submit">Salvar</button>
         </div>
     </form>
