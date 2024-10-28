@@ -170,3 +170,10 @@ button:hover{
     padding: 0;
     width: 100px;
 }
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

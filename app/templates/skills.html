@@ -47,6 +47,13 @@
                 </tbody>
             </table>
         </div>
-        <button class="goBackBtn" onclick="location.href='{% url 'main' %}'">Voltar</button>
+        <div class="buttons">
+            <form method="post" action="{% url 'remove_funcionario' funcionario.id %}">
+                {% csrf_token %}
+                <button type="submit" class="deleteBtn" onclick="return confirm('Deseja realmente remover este funcionário?')">Remover</button>
+            </form>
+
+            <button class="goBackBtn" onclick="location.href='{% url 'main' %}'">Voltar</button>    
+        </div>
     </div>
 {% endblock %}

@@ -62,6 +62,16 @@ def adicionar_funcionario(request):
     return render(request, 'adicionar_funcionario.html', {'form': form})
 
 @login_required(login_url='login')
+def remove_funcionario(request, funcionario_id):
+    funcionario = get_object_or_404(Funcionario, id=funcionario_id)
+
+    if request.method == 'POST':
+        funcionario.delete()
+        return redirect('main')
+
+    return redirect('main')
+
+@login_required(login_url='login')
 def add_skill(request, funcionario_id):
     funcionario = get_object_or_404(Funcionario, id=funcionario_id)
     
