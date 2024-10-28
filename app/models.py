@@ -15,8 +15,6 @@ class Funcionario(models.Model):
     def __str__(self):
         return self.nome
 
-from django.db import models
-
 class CalendarioItem(models.Model):
     data_inicio = models.DateTimeField()
     data_fim = models.DateTimeField(null=True, blank=True)

@@ -2,11 +2,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm as CustomAuthenticationForm
 from .forms import UserRegistrationForm
-from .models import Funcionario, Skill, CalendarioItem
+from .models import Funcionario, Skill, CalendarioItem, Funcionario
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 from .forms import CalendarioItemForm
 from django.contrib.auth.decorators import login_required
+from .forms import FuncionarioForm
 
 def minha_view(request):
     return render(request, 'index.html')
@@ -46,6 +47,19 @@ def lista_funcionarios(request):
 def funcionario_detalhes(request, funcionario_id):
     funcionario = get_object_or_404(Funcionario, id=funcionario_id)
     return render(request, 'skills.html', {'funcionario': funcionario})
+
+@login_required(login_url='login')
+def adicionar_funcionario(request):
+    if request.method == 'POST':
+        form = FuncionarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('main')
+        
+    else:
+        form = FuncionarioForm()
+
+    return render(request, 'adicionar_funcionario.html', {'form': form})
 
 @login_required(login_url='login')
 def add_skill(request, funcionario_id):
