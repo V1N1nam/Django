@@ -50,6 +50,11 @@ class FuncionarioForm(forms.ModelForm):
         model = Funcionario
         fields = ['nome', 'cargo', 'data_nascimento', 'skills']
 
+    data_nascimento = forms.DateField(
+        input_formats=['%d/%m/%Y'],
+        widget=forms.DateInput(format='%d/%m/%Y', attrs={'placeholder': 'dd/mm/aaaa'})
+    )
+
 class CalendarioItemForm(forms.ModelForm):
     class Meta:
         model = CalendarioItem
