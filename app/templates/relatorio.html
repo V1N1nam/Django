@@ -31,9 +31,18 @@
     </form>
 
     <div class="containerMain">
-        <div class="leftSide">
+        
+        <div class="topDiv">
             <h2>Relatório de Funcionários</h2>
-            <input class="searchBar" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
+            <div class="actions">
+                <a href="{% url 'main' %}">Voltar</a>
+                <input class="searchBar" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
+                <a href="{% url 'gerar_relatorio_pdf' %}" class="btn-download-pdf">Baixar em PDF</a>
+            </div>
+            
+        </div>
+
+        <div class="bottomDiv">
 
             <table id="funcionariosTabela">
                 <thead>
@@ -59,12 +68,6 @@
                     {% endfor %}
                 </tbody>
             </table>
-        </div>
-        <div class="rightSide">
-            <a href="{% url 'gerar_relatorio_pdf' %}" class="btn-download-pdf">Baixar em PDF</a>
-            <!-- Resto do código existente -->
-            <a href="{% url 'main' %}">Voltar</a>
-
         </div>
     </div>
 
