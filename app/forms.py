@@ -5,7 +5,6 @@ from django.core.exceptions import ValidationError
 from .models import CalendarioItem, Funcionario
 
 class UserRegistrationForm(UserCreationForm):
-
     username = forms.CharField(
     widget=forms.TextInput(attrs={'class': 'form-control', 'id': 'id_username', 'placeholder': 'Digite seu nome de usuário'}),
     label='Nome de usuário'
