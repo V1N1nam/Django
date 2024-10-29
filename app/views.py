@@ -8,6 +8,12 @@ from django.http import JsonResponse
 from .forms import CalendarioItemForm
 from django.contrib.auth.decorators import login_required
 from .forms import FuncionarioForm
+import io
+from django.http import FileResponse
+from django.template.loader import get_template
+from xhtml2pdf import pisa
+from .models import Funcionario, Skill
+from django.http import FileResponse, HttpResponse
 
 def minha_view(request):
     return render(request, 'index.html')
@@ -175,3 +181,25 @@ def deletar_evento(request, evento_id):
         evento.delete()
         return JsonResponse({'status': 'success'})
     return JsonResponse({'status': 'error'}, status=400)
+
+def gerar_relatorio_pdf(request):
+    try:
+        # Obtenha os dados do relatório
+        funcionarios = Funcionario.objects.all()  # Ou aplique os filtros desejados
+
+        # Renderize o novo template somente com a tabela
+        template = get_template('relatorio_pdf.html')  # Nome do novo template
+        html = template.render({'funcionarios': funcionarios})
+
+        # Converta o HTML para PDF
+        result = io.BytesIO()
+        pdf = pisa.pisaDocument(io.BytesIO(html.encode("UTF-8")), result)
+
+        if pdf.err:
+            return HttpResponse("Erro ao gerar o PDF", status=500)
+
+        result.seek(0)
+        return FileResponse(result, content_type='application/pdf')
+    
+    except Exception as e:
+        return HttpResponse(f"Erro na geração do PDF: {str(e)}", status=500)

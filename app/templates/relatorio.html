@@ -60,7 +60,12 @@
                 </tbody>
             </table>
         </div>
+        <div class="baixarPdf">
+            <a href="{% url 'gerar_relatorio_pdf' %}" class="btn-download-pdf">Baixar em PDF</a>
+            <!-- Resto do código existente -->
+        </div>
     </div>
+
     <a href="{% url 'main' %}">Voltar</a>
     <script src="{% static 'app/js/sortTable.js' %}"></script>
     <script src="{% static 'app/js/searchTable.js' %}"></script>

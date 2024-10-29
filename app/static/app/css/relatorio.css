@@ -149,6 +149,10 @@ a:hover {
     background-color: #6e0000;
 }
 
+.baixarPdf{
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .formMain {
         flex-direction: column;
