@@ -182,6 +182,7 @@ def deletar_evento(request, evento_id):
         return JsonResponse({'status': 'success'})
     return JsonResponse({'status': 'error'}, status=400)
 
+@login_required(login_url='login')
 def gerar_relatorio_pdf(request):
     try:
         # Obtenha os dados do relatório
