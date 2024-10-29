@@ -31,8 +31,8 @@
     </form>
 
     <div class="containerMain">
-        <h2>Relatório de Funcionários</h2>
-        <div class="tableDiv">
+        <div class="leftSide">
+            <h2>Relatório de Funcionários</h2>
             <input class="searchBar" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
 
             <table id="funcionariosTabela">
@@ -60,13 +60,14 @@
                 </tbody>
             </table>
         </div>
-        <div class="baixarPdf">
+        <div class="rightSide">
             <a href="{% url 'gerar_relatorio_pdf' %}" class="btn-download-pdf">Baixar em PDF</a>
             <!-- Resto do código existente -->
+            <a href="{% url 'main' %}">Voltar</a>
+
         </div>
     </div>
 
-    <a href="{% url 'main' %}">Voltar</a>
     <script src="{% static 'app/js/sortTable.js' %}"></script>
     <script src="{% static 'app/js/searchTable.js' %}"></script>
 {% endblock %}
