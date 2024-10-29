@@ -11,7 +11,10 @@
 
 {% block content %}
     <div class="mainContainer">
-        <div class="leftContainer">
+        <div class="rightContainer">
+            <h1>Funcionários</h1>
+            <input class="searchBar" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
+
             <div class="actions">
                 <button class="reportBtn" onclick="location.href='{% url 'relatorio_dinamico' %}'">
                     Gerar Relatório
@@ -24,11 +27,6 @@
                     Adicionar Funcionário
                 </button>
             </div>
-        </div>
-
-        <div class="rightContainer">
-            <h1>Funcionários</h1>
-            <input class="searchBar" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
 
             <div class="divTabela">
                 <table id="funcionariosTabela" class="funcionariosNomes">

@@ -15,55 +15,12 @@ body {
 
 /* Estilizando o container da esquerda */
 .mainContainer {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    column-gap: 100px;
-    width: 100%;
-    height: 100vh;
-    padding: 20px;
-}
-
-/* Estilizando o container da esquerda */
-.leftContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100%;
-    border-radius: 4px;
+    height: 100vh;
     padding: 20px;
-    background-color: white;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilizando ações */
-.actions {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Aplica o space-between verticalmente */
-    height: 80%; /* Define a altura total do container */
-    width: 100%;
-}
-
-
-/* Estilizando os botões */
-button {
-    background-color: #c23131;
-    font-weight: bold;
-    font-size: 25px;
-    width: 100%;
-    height: 60px;
-    font-family: Calibri;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-}
-
-button:hover {
-    opacity: .8;
 }
 
 /* Estilizando o container da direita */
@@ -78,8 +35,39 @@ button:hover {
     text-align: center;
 }
 
+/* Estilizando ações */
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Aplica o space-between verticalmente */
+    width: 100%;
+    padding: 0 100px;
+    margin: 20px 0;
+}
+
+
+/* Estilizando os botões */
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c23131;
+    font-size: 20px;
+    padding: 10px;
+    font-family: Calibri;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: .8;
+}
+
 .divTabela {
-    height: 70%;
+    height: 60%;
     overflow-y: scroll;
 }
 
