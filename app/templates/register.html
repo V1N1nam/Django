@@ -19,7 +19,9 @@
             <form method="post" action="{% url 'register' %}">
                 {% csrf_token %}
                 <div class="formUser">
-                {{ form.username }}
+                    {{ form.username }} {% if form.username.errors %}
+                    <div class="error">{{ form.username.errors }}</div>
+                    {% endif %}
                 </div>
                 <div class="formPassOne">
                     {{ form.password1 }} {% if form.password1.errors %}
