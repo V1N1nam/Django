@@ -14,6 +14,7 @@ from django.template.loader import get_template
 from xhtml2pdf import pisa
 from .models import Funcionario, Skill
 from django.http import FileResponse, HttpResponse
+from django.views.decorators.csrf import csrf_protect
 
 def minha_view(request):
     return render(request, 'index.html')
@@ -182,6 +183,7 @@ def deletar_evento(request, evento_id):
         return JsonResponse({'status': 'success'})
     return JsonResponse({'status': 'error'}, status=400)
 
+@login_required(login_url='login')
 def gerar_relatorio_pdf(request):
     try:
         # Obtenha os dados do relatório

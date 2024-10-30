@@ -16,10 +16,12 @@
                 <img class="imgLogo" src="{% static 'app/img/brose_logo.png' %}" alt="">
             </div>
             <h1 class="registerTitle">Preencha os campos abaixo</h1>
-            <form method="post">
+            <form method="post" action="{% url 'register' %}">
                 {% csrf_token %}
                 <div class="formUser">
-                {{ form.username }}
+                    {{ form.username }} {% if form.username.errors %}
+                    <div class="error">{{ form.username.errors }}</div>
+                    {% endif %}
                 </div>
                 <div class="formPassOne">
                     {{ form.password1 }} {% if form.password1.errors %}

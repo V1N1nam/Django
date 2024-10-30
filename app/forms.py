@@ -24,6 +24,16 @@ class UserRegistrationForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
+    def clean_username(self):
+        username = self.cleaned_data['username']
+        if User.objects.filter(username=username).exists():
+            raise ValidationError('Nome de usuário ja existe.')
+        
+        elif ' ' in username:
+            raise ValidationError('Nome de usuário não pode conter espaços.')
+
+        return username
+    
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
         password2 = self.cleaned_data.get("password2")
