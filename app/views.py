@@ -16,12 +16,9 @@ from .models import Funcionario, Skill
 from django.http import FileResponse, HttpResponse
 from django.views.decorators.csrf import csrf_protect
 
-
-@csrf_protect
 def minha_view(request):
     return render(request, 'index.html')
 
-@csrf_protect
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
@@ -32,7 +29,6 @@ def register(request):
         form = UserRegistrationForm()
     return render(request, 'register.html', {'form': form})
 
-@csrf_protect
 def login_view(request):
     if request.method == 'POST':
         form = CustomAuthenticationForm(request, data=request.POST)
