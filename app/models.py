@@ -1,16 +1,28 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 class Skill(models.Model):
+    nome = models.CharField(max_length=100, unique=True)
+    nivel = models.IntegerField(default=1)
+
+    def clean(self):
+        if Skill.objects.filter(nome=self.nome).exists():
+            raise ValidationError({'nome': 'Já existe uma skill com este nome no sistema.'})
+
+    def __str__(self):
+        return self.nome
+
+class Cargo(models.Model):
     nome = models.CharField(max_length=100)
+    skills = models.ManyToManyField(Skill, blank=True)
 
     def __str__(self):
         return self.nome
 
 class Funcionario(models.Model):
     nome = models.CharField(max_length=100)
-    cargo = models.CharField(max_length=50)
     data_nascimento = models.DateField()
-    skills = models.ManyToManyField(Skill, blank=True)  # Relacionamento ManyToMany com Skill
+    cargo = models.ForeignKey(Cargo, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nome

@@ -7,7 +7,7 @@ from django.template.loader import render_to_string
 from django.http import JsonResponse
 from .forms import CalendarioItemForm
 from django.contrib.auth.decorators import login_required
-from .forms import FuncionarioForm
+from .forms import FuncionarioForm, SkillForm
 import io
 from django.http import FileResponse
 from django.template.loader import get_template
@@ -141,6 +141,19 @@ def relatorio_dinamico(request):
     }
 
     return render(request, 'relatorio.html', context)
+
+@login_required(login_url='login')
+def adicionar_skill(request):
+    if request.method == 'POST':
+        form = SkillForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('main')
+        
+    else:
+        form = SkillForm()
+
+    return render(request, 'editar_skills.html', {'form': form})
 
 @login_required(login_url='login')
 def calendario_eventos(request):

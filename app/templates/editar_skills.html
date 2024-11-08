@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Editar Skills
+{% endblock %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'app/css/editar_skills.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="skillForm">
+        <form method="post">
+            <h2>Editar Skills</h2>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="submitButton">
+                <button type="button"class="cancelBtn" onclick="location.href='{% url 'main' %}'">Voltar</button>
+                <button type="submit">Salvar</button>
+            </div>
+        </form>
+    </div>
+    <div class="skillTable">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Níveis</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for skill in skills %}
+                    <tr>
+                        <td>{{ skill.nome }}</td>
+                        <td>{{ skill.nivel }}</td>
+                    </tr>
+                {% empty %}
+                    <tr class="valuesColumns">
+                        <td style="text-align: center; color: gray" colspan="4">Nenhum funcionário encontrado.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

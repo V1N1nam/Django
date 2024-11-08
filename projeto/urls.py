@@ -22,4 +22,5 @@ urlpatterns = [
     path('calendario/adicionar/', views.adicionar_item_view, name='adicionar_item'),
     path('calendario/deletar/<int:evento_id>/', views.deletar_evento, name='deletar_evento'),
     path('relatorio/pdf/', views.gerar_relatorio_pdf, name='gerar_relatorio_pdf'),
+    path('editar_skills/', views.adicionar_skill, name='editar_skills'),
 ]
