@@ -144,16 +144,18 @@ def relatorio_dinamico(request):
 
 @login_required(login_url='login')
 def adicionar_skill(request):
+    skills = Skill.objects.all()
+
     if request.method == 'POST':
         form = SkillForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('main')
+            return redirect('editar_skills')
         
     else:
         form = SkillForm()
 
-    return render(request, 'editar_skills.html', {'form': form})
+    return render(request, 'editar_skills.html', {'form': form, 'skills': skills})
 
 @login_required(login_url='login')
 def calendario_eventos(request):
