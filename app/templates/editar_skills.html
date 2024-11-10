@@ -35,7 +35,15 @@
                     {% for skill in skills %}
                         <tr>
                             <td>{{ skill.nome }}</td>
-                            <td>{{ skill.nivel }}</td>
+                            <td>
+                                {{ skill.nivel }}
+                                <form action="{% url 'remove_skill' skill_id=skill.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" class="remove_skill">
+                                        <img class="deleteIcon" src="{% static 'app/img/icons/delete.png' %}" alt="">
+                                    </button>
+                                </form>
+                            </td>
                         </tr>
                     {% empty %}
                         <tr class="valuesColumns">

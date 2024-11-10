@@ -105,21 +105,13 @@ def add_skill(request, funcionario_id):
     return redirect('funcionario_detail', funcionario_id=funcionario.id)
 
 @login_required(login_url='login')
-def remove_skill(request, funcionario_id, skill_id):
-    funcionario = get_object_or_404(Funcionario, id=funcionario_id)
+def remove_skill(request, skill_id):
     skill = get_object_or_404(Skill, id=skill_id)
     
-    if skill in funcionario.skills.all():
-        funcionario.skills.remove(skill)
-        funcionario.save()  # Salva as alterações no banco de dados
-        
-    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
-        # Renderiza a lista de skills para retorno via AJAX
-        skills_html = render_to_string('skills_list.html', {'funcionario': funcionario})
-        return JsonResponse({'skills_html': skills_html})
-
-    # Redireciona para a página de detalhes do funcionário
-    return redirect('funcionario_detail', funcionario_id=funcionario.id)
+    if request.method == 'POST':
+        skill.delete()
+    
+    return redirect('editar_skills')
 
 @login_required(login_url='login')
 def relatorio_dinamico(request):

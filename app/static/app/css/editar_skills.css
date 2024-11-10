@@ -129,6 +129,15 @@ form textarea:focus {
     background-color: #9e0000;
 }
 
+.skillTable tbody tr td {
+    border-bottom: 1px solid #dddddd;
+}
+
+.skillTable tbody tr td:last-child {
+    display: flex;
+    justify-content: space-between;
+}
+
 .skillTable tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
@@ -141,4 +150,9 @@ form textarea:focus {
     text-align: center;
     font-style: italic;
     color: gray;
+}
+
+.deleteIcon {
+    width: 20px;
+    height: 20px;
 }
