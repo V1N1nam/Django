@@ -2,18 +2,18 @@
 {% load static %}
 
 {% block title %}
-    Editar Skills
+    Editar Cargos
 {% endblock %}
 
 {% block extrahead %}
-    <link rel="stylesheet" href="{% static 'app/css/editar_skills.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/editar_cargos.css' %}">
 {% endblock %}
 
 {% block content %}
     <div class="mainContainer">
-        <div class="skillForm">
+        <div class="cargoForm">
             <form method="post">
-                <h2>Editar Skills</h2>
+                <h2>Editar Cargos</h2>
                 {% csrf_token %}
                 {{ form.as_p }}
                 <div class="submitButton">
@@ -22,32 +22,26 @@
                 </div>
             </form>
         </div>
-        <div class="skillTable">
+        <div class="cargoTable">
             <table>
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Níveis</th>
+                        <th>Skills</th>
                     </tr>
                 </thead>
                 
                 <tbody>
-                    {% for skill in skills %}
+                    {% for cargo in cargos %}
                         <tr>
-                            <td>{{ skill.nome }}</td>
+                            <td>{{ cargo.nome }}</td>
                             <td>
-                                {{ skill.nivel }}
-                                <form action="{% url 'remove_skill' skill_id=skill.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <button type="submit" class="remove_skill">
-                                        <img class="deleteIcon" src="{% static 'app/img/icons/delete.png' %}" alt="">
-                                    </button>
-                                </form>
+                                {{ cargo.skills.all|join:", " }}
                             </td>
                         </tr>
                     {% empty %}
                         <tr class="valuesColumns">
-                            <td style="text-align: center; color: gray" colspan="4">Nenhuma skill cadastrada no sistema.</td>
+                            <td style="text-align: center; color: gray" colspan="4">Nenhum cargo cadastrado no sistema.</td>
                         </tr>
                     {% endfor %}
                 </tbody>

@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
-from .models import CalendarioItem, Funcionario, Skill
+from .models import CalendarioItem, Funcionario, Skill, Cargo
 
 class UserRegistrationForm(UserCreationForm):
     username = forms.CharField(
@@ -68,6 +68,17 @@ class SkillForm(forms.ModelForm):
     class Meta:
         model = Skill
         fields = ['nome', 'nivel']
+
+class CargoForm(forms.ModelForm):
+    skills = forms.ModelMultipleChoiceField(
+    queryset=Skill.objects.all(),  # Carrega todas as habilidades
+    widget=forms.CheckboxSelectMultiple,  # Ou use outro widget de sua escolha
+    required=False  # Define se a seleção de skills é obrigatória
+    )
+    class Meta:
+        model = Cargo
+        fields = ['nome', 'skills']
+
 
 
 class CalendarioItemForm(forms.ModelForm):

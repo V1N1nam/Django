@@ -21,6 +21,8 @@ urlpatterns = [
     path('calendario/adicionar/', views.adicionar_item_view, name='adicionar_item'),
     path('calendario/deletar/<int:evento_id>/', views.deletar_evento, name='deletar_evento'),
     path('relatorio/pdf/', views.gerar_relatorio_pdf, name='gerar_relatorio_pdf'),
+    path('editar_cargos/', views.editar_cargos, name='editar_cargos'),
+    path('adicionar_cargo/', views.adicionar_cargo, name='editar_cargos'),
     path('editar_skills/', views.adicionar_skill, name='editar_skills'),
     path('remove_skill/<int:skill_id>/', views.remove_skill, name='remove_skill'),
 ]

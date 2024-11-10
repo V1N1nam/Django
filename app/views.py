@@ -2,12 +2,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm as CustomAuthenticationForm
 from .forms import UserRegistrationForm
-from .models import Funcionario, Skill, CalendarioItem, Funcionario
+from .models import Funcionario, Skill, Cargo, CalendarioItem, Funcionario
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 from .forms import CalendarioItemForm
 from django.contrib.auth.decorators import login_required
-from .forms import FuncionarioForm, SkillForm
+from .forms import FuncionarioForm, SkillForm, CargoForm
 import io
 from django.http import FileResponse
 from django.template.loader import get_template
@@ -79,30 +79,38 @@ def remove_funcionario(request, funcionario_id):
     return redirect('main')
 
 @login_required(login_url='login')
-def add_skill(request, funcionario_id):
-    funcionario = get_object_or_404(Funcionario, id=funcionario_id)
-    
-    if request.method == 'POST':
-        skill_name = request.POST.get('skill')
-        
-        if skill_name:
-            # Obtém ou cria a skill
-            skill, created = Skill.objects.get_or_create(nome=skill_name)
-            
-            # Adiciona a skill ao funcionário
-            funcionario.skills.add(skill)
-            
-            # Verifica se a requisição é AJAX
-            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
-                # Renderiza a lista de skills para retorno via AJAX
-                skills_html = render_to_string('skills_list.html', {'funcionario': funcionario})
-                return JsonResponse({'skills_html': skills_html})
-        
-        # Redireciona para a página de detalhes do funcionário
-        return redirect('funcionario_detail', funcionario_id=funcionario.id)
+def editar_cargos(request):
+    return render(request, 'editar_cargos.html')
 
-    # Caso a requisição não seja POST, retorna um redirecionamento padrão
-    return redirect('funcionario_detail', funcionario_id=funcionario.id)
+@login_required(login_url='login')
+def adicionar_cargo(request):
+    cargos = Cargo.objects.all()
+
+    if request.method == 'POST':
+        form = CargoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('editar_cargos')
+        
+    else:
+        form = CargoForm()
+    
+    return render(request, 'editar_cargos.html', {'form': form, 'cargos': cargos})
+
+@login_required(login_url='login')
+def adicionar_skill(request):
+    skills = Skill.objects.all()
+
+    if request.method == 'POST':
+        form = SkillForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('editar_skills')
+        
+    else:
+        form = SkillForm()
+
+    return render(request, 'editar_skills.html', {'form': form, 'skills': skills})
 
 @login_required(login_url='login')
 def remove_skill(request, skill_id):
@@ -133,21 +141,6 @@ def relatorio_dinamico(request):
     }
 
     return render(request, 'relatorio.html', context)
-
-@login_required(login_url='login')
-def adicionar_skill(request):
-    skills = Skill.objects.all()
-
-    if request.method == 'POST':
-        form = SkillForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('editar_skills')
-        
-    else:
-        form = SkillForm()
-
-    return render(request, 'editar_skills.html', {'form': form, 'skills': skills})
 
 @login_required(login_url='login')
 def calendario_eventos(request):
@@ -212,3 +205,30 @@ def gerar_relatorio_pdf(request):
     
     except Exception as e:
         return HttpResponse(f"Erro na geração do PDF: {str(e)}", status=500)
+
+# FUNCAO ANTIGA
+@login_required(login_url='login')
+def add_skill(request, funcionario_id):
+    funcionario = get_object_or_404(Funcionario, id=funcionario_id)
+    
+    if request.method == 'POST':
+        skill_name = request.POST.get('skill')
+        
+        if skill_name:
+            # Obtém ou cria a skill
+            skill, created = Skill.objects.get_or_create(nome=skill_name)
+            
+            # Adiciona a skill ao funcionário
+            funcionario.skills.add(skill)
+            
+            # Verifica se a requisição é AJAX
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                # Renderiza a lista de skills para retorno via AJAX
+                skills_html = render_to_string('skills_list.html', {'funcionario': funcionario})
+                return JsonResponse({'skills_html': skills_html})
+        
+        # Redireciona para a página de detalhes do funcionário
+        return redirect('funcionario_detail', funcionario_id=funcionario.id)
+
+    # Caso a requisição não seja POST, retorna um redirecionamento padrão
+    return redirect('funcionario_detail', funcionario_id=funcionario.id)
