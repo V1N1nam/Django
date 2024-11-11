@@ -11,7 +11,7 @@ from app.models import Skill  # Substitua "myapp" pelo nome do seu app
 from django.core.exceptions import ValidationError
 
 # Exemplo de dados JSON
-with open('skills.json', 'r') as file:
+with open('skills.json', 'r', encoding='utf-8') as file:
     json_data = json.load(file)
 # Carregar os dados JSON
 skills_data = json_data

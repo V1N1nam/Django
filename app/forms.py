@@ -75,6 +75,7 @@ class CargoForm(forms.ModelForm):
     widget=forms.CheckboxSelectMultiple,  # Ou use outro widget de sua escolha
     required=False  # Define se a seleção de skills é obrigatória
     )
+    
     class Meta:
         model = Cargo
         fields = ['nome', 'skills']
