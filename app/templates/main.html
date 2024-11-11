@@ -49,8 +49,8 @@
                         {% for funcionario in funcionarios %}
                         <tr class="funcionarioOuterDiv" onclick="window.location='{% url 'funcionario_detail' funcionario.id %}'">
                             <td class="infoUser">{{ funcionario.nome }}</td>
-                            <td class="infoUser">{{ funcionario.data_nascimento|date:"d/m/Y" }}</td>
                             <td class="infoUser">{{ funcionario.cargo }}</td>
+                            <td class="infoUser">{{ funcionario.data_nascimento|date:"d/m/Y" }}</td>
                         </tr>
                         {% empty %}
                         <tr class="valuesColumns">
