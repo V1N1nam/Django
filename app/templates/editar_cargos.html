@@ -28,6 +28,7 @@
                     <tr>
                         <th>Nome</th>
                         <th>Skills</th>
+                        <th>Remover</th>
                     </tr>
                 </thead>
                 
@@ -37,6 +38,14 @@
                             <td>{{ cargo.nome }}</td>
                             <td>
                                 {{ cargo.skills.all|join:", " }}
+                            </td>
+                            <td>
+                                <form action="{% url 'remove_cargo' cargo_id=cargo.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" class="remove_cargo">
+                                        <img class="deleteIcon" src="{% static 'app/img/icons/delete.png' %}" alt="">
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     {% empty %}

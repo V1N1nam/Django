@@ -23,6 +23,7 @@ urlpatterns = [
     path('relatorio/pdf/', views.gerar_relatorio_pdf, name='gerar_relatorio_pdf'),
     path('editar_cargos/', views.editar_cargos, name='editar_cargos'),
     path('adicionar_cargo/', views.adicionar_cargo, name='editar_cargos'),
+    path('remove_cargo/<int:cargo_id>/', views.remove_cargo, name='remove_cargo'),
     path('editar_skills/', views.adicionar_skill, name='editar_skills'),
     path('remove_skill/<int:skill_id>/', views.remove_skill, name='remove_skill'),
 ]

@@ -98,6 +98,15 @@ def adicionar_cargo(request):
     return render(request, 'editar_cargos.html', {'form': form, 'cargos': cargos})
 
 @login_required(login_url='login')
+def remove_cargo(request, cargo_id):
+    cargo = get_object_or_404(Cargo, id=cargo_id)
+    
+    if request.method == 'POST':
+        cargo.delete()
+    
+    return redirect('editar_cargos')
+
+@login_required(login_url='login')
 def adicionar_skill(request):
     skills = Skill.objects.all()
 

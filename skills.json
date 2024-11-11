@@ -1,0 +1,162 @@
+[
+    {
+        "nome": "JavaScript",
+        "nivel": 4
+    },
+    {
+        "nome": "Django",
+        "nivel": 3
+    },
+    {
+        "nome": "Java",
+        "nivel": 4
+    },
+    {
+        "nome": "MongoDB",
+        "nivel": 2
+    },
+    {
+        "nome": "Python",
+        "nivel": 5
+    },
+    {
+        "nome": "HTML",
+        "nivel": 5
+    },
+    {
+        "nome": "CSS",
+        "nivel": 5
+    },
+    {
+        "nome": "Node.js",
+        "nivel": 4
+    },
+    {
+        "nome": "React",
+        "nivel": 3
+    },
+    {
+        "nome": "Vue.js",
+        "nivel": 3
+    },
+    {
+        "nome": "SQL",
+        "nivel": 4
+    },
+    {
+        "nome": "PostgreSQL",
+        "nivel": 4
+    },
+    {
+        "nome": "Git",
+        "nivel": 5
+    },
+    {
+        "nome": "GitHub",
+        "nivel": 5
+    },
+    {
+        "nome": "TypeScript",
+        "nivel": 3
+    },
+    {
+        "nome": "Ruby",
+        "nivel": 2
+    },
+    {
+        "nome": "Ruby on Rails",
+        "nivel": 2
+    },
+    {
+        "nome": "AWS",
+        "nivel": 3
+    },
+    {
+        "nome": "Docker",
+        "nivel": 3
+    },
+    {
+        "nome": "Kubernetes",
+        "nivel": 2
+    },
+    {
+        "nome": "Linux",
+        "nivel": 4
+    },
+    {
+        "nome": "Bash",
+        "nivel": 3
+    },
+    {
+        "nome": "MongoDB Atlas",
+        "nivel": 3
+    },
+    {
+        "nome": "GraphQL",
+        "nivel": 3
+    },
+    {
+        "nome": "Redis",
+        "nivel": 2
+    },
+    {
+        "nome": "Express.js",
+        "nivel": 3
+    },
+    {
+        "nome": "SASS",
+        "nivel": 4
+    },
+    {
+        "nome": "Jest",
+        "nivel": 3
+    },
+    {
+        "nome": "Mocha",
+        "nivel": 2
+    },
+    {
+        "nome": "Chai",
+        "nivel": 2
+    },
+    {
+        "nome": "Android Development",
+        "nivel": 3
+    },
+    {
+        "nome": "Flutter",
+        "nivel": 2
+    },
+    {
+        "nome": "Swift",
+        "nivel": 2
+    },
+    {
+        "nome": "JavaFX",
+        "nivel": 3
+    },
+    {
+        "nome": "JUnit",
+        "nivel": 4
+    },
+    {
+        "nome": "Kotlin",
+        "nivel": 3
+    },
+    {
+        "nome": "Figma",
+        "nivel": 3
+    },
+    {
+        "nome": "Photoshop",
+        "nivel": 2
+    },
+    {
+        "nome": "Illustrator",
+        "nivel": 2
+    },
+    {
+        "nome": "Vuex",
+        "nivel": 3
+    }
+]

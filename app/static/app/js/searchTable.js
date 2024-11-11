@@ -2,7 +2,7 @@ function filterTable() {
     // Obtém o valor da barra de pesquisa
     var input = document.getElementById("searchInput");
     var filter = input.value.toLowerCase();
-    var table = document.getElementById("funcionariosTabela");
+    var table = document.getElementsByTagName("table")[0];
     var tr = table.getElementsByTagName("tr");
 
     // Itera sobre todas as linhas da tabela (ignorando a primeira linha com o cabeçalho)
