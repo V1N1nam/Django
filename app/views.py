@@ -15,6 +15,7 @@ from xhtml2pdf import pisa
 from .models import Funcionario, Skill
 from django.http import FileResponse, HttpResponse
 from django.views.decorators.csrf import csrf_protect
+from django.contrib import messages
 
 def minha_view(request):
     return render(request, 'index.html')
@@ -102,7 +103,10 @@ def remove_cargo(request, cargo_id):
     cargo = get_object_or_404(Cargo, id=cargo_id)
     
     if request.method == 'POST':
-        cargo.delete()
+        if Funcionario.objects.filter(cargo=cargo).exists():
+            messages.warning(request, "• Este cargo possui funcionários atrelados e não pode ser excluído.")
+        else:
+            cargo.delete()
     
     return redirect('editar_cargos')
 
@@ -126,7 +130,11 @@ def remove_skill(request, skill_id):
     skill = get_object_or_404(Skill, id=skill_id)
     
     if request.method == 'POST':
-        skill.delete()
+        if Cargo.objects.filter(skills=skill).exists():
+            messages.warning(request, "• Esta skill possui cargos atrelados e não pode ser excluida.")
+        
+        else:
+            skill.delete()
     
     return redirect('editar_skills')
 

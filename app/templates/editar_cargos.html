@@ -26,6 +26,11 @@
             <input class="searchBar" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
 
             <div class="tableDiv">
+                {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
                 <table>
                     <thead>
                         <tr>

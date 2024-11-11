@@ -8,6 +8,9 @@ class Skill(models.Model):
     def clean(self):
         if Skill.objects.filter(nome=self.nome).exists():
             raise ValidationError({'nome': 'Já existe uma skill com este nome no sistema.'})
+        
+        #if self.pk and self.cargo_set.exists():
+            #raise ValidationError({'nome': 'Esta skill está associada a um cargo.'})
 
     def __str__(self):
         return self.nome
@@ -19,6 +22,7 @@ class Cargo(models.Model):
     def clean(self):
         if Cargo.objects.filter(nome=self.nome).exists():
             raise ValidationError({'nome': 'Já existe um cargo com este nome no sistema.'})
+        
 
     def __str__(self):
         return self.nome
