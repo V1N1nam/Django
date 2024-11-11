@@ -14,10 +14,16 @@ body {
     overflow-y: scroll;
 }
 
+#id_nome {
+    font-size: 20px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+}
+
 .mainContainer {
     display: flex;
     flex-direction: row;
-    height: 80vh;
+    height: 100vh;
 }
 
 .cargoForm {
@@ -86,6 +92,11 @@ body {
     border-radius: 30px;
 }
 
+.tableDiv {
+    height: 70vh;
+    overflow-y: scroll;
+}
+
 /* Estilos da tabela */
 .cargoTable {
     background-color: white;
@@ -152,4 +163,8 @@ body {
 .deleteIcon {
     width: 20px;
     height: 20px;
+}
+
+button {
+    margin: 0;
 }

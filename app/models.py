@@ -16,6 +16,10 @@ class Cargo(models.Model):
     nome = models.CharField(max_length=100)
     skills = models.ManyToManyField(Skill, blank=True)
 
+    def clean(self):
+        if Cargo.objects.filter(nome=self.nome).exists():
+            raise ValidationError({'nome': 'Já existe um cargo com este nome no sistema.'})
+
     def __str__(self):
         return self.nome
 
