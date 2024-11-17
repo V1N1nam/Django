@@ -59,7 +59,7 @@
                             <td>{{ funcionario.nome }}</td>
                             <td>{{ funcionario.cargo }}</td>
                             <td>{{ funcionario.data_nascimento|date:"d/m/Y" }}</td>
-                            <td>{{ funcionario.skills.all|join:", " }}</td>
+                            <td>{{ funcionario.cargo.skills.all|join:", " }}</td>
                         </tr>
                     {% empty %}
                         <tr class="valuesColumns">
