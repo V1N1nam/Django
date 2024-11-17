@@ -1,7 +1,0 @@
-<ul id="skillsUl">
-    {% for skill in funcionario.skills.all %}
-        <li>{{ skill.nome }}</li>
-    {% empty %}
-        <li>Não há skills cadastradas.</li>
-    {% endfor %}
-</ul>

@@ -13,7 +13,7 @@
                     <td style=" width: 200px; border: 1px solid #ddd; padding: 8px; text-align: center;">{{ funcionario.nome }}</td>
                     <td style=" width: 200px; border: 1px solid #ddd; padding: 8px; text-align: center;">{{ funcionario.cargo }}</td>
                     <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{{ funcionario.data_nascimento|date:"d/m/Y" }}</td>
-                    <td style="width: 250px; border: 1px solid #ddd; padding: 8px; word-wrap: break-word; text-align: center;">{{ funcionario.skills.all|join:", " }}</td>
+                    <td style="width: 250px; border: 1px solid #ddd; padding: 8px; word-wrap: break-word; text-align: center;">{{ funcionario.cargo.skills.all|join:", " }}</td>
                 </tr>
             {% empty %}
                 <tr>
