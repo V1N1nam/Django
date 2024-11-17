@@ -82,7 +82,7 @@ body {
 .searchBar {
     display: flex;
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 20px;
     width: 100%;
     max-width: 500px;
