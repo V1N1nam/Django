@@ -48,13 +48,14 @@ def principal_view(request):
 @login_required(login_url='login')
 def lista_funcionarios(request):
     funcionarios = Funcionario.objects.all()
-    print(funcionarios)
     return render(request, 'main.html', {'funcionarios': funcionarios})
 
 @login_required(login_url='login')
 def funcionario_detalhes(request, funcionario_id):
     funcionario = get_object_or_404(Funcionario, id=funcionario_id)
-    return render(request, 'skills.html', {'funcionario': funcionario})
+    skills = funcionario.cargo.skills.all()
+
+    return render(request, 'skills.html', {'funcionario': funcionario, 'skills': skills})
 
 @login_required(login_url='login')
 def adicionar_funcionario(request):

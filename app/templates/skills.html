@@ -16,28 +16,19 @@
         <h1>{{ funcionario.nome }}</h1>
         <p><strong>Cargo:</strong> {{ funcionario.cargo }}</p>
         <p><strong>Data de Nascimento:</strong> {{ funcionario.data_nascimento|date:"d/m/Y" }}</p>
-        <form method="post" action="{% url 'add_skill' funcionario.id %}">
-            {% csrf_token %}
-            <input id="skillInput" name="skill" type="text" placeholder="Digite a skill">
-            <button type="submit">Adicionar</button>
-        </form>
         <div class="skillsList">
             <table id="skillsTable">
                 <thead>
                     <tr>
                         <th>Skill</th>
-                        <th>Ações</th>
+                        <th>Nível</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for skill in funcionario.skills.all %}
+                    {% for skill in skills %}
                         <tr>
                             <td>{{ skill.nome }}</td>
-                            <td>
-                                <a href="{% url 'remove_skill' funcionario.id skill.id %}" class="remove-skill">
-                                    <img src="{% static 'app/img/icons/delete.png' %}" alt="">
-                                </a>
-                            </td>
+                            <td>{{ skill.nivel }}</td>
                         </tr>
                     {% empty %}
                         <tr>
