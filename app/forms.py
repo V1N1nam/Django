@@ -70,6 +70,7 @@ class SkillForm(forms.ModelForm):
         fields = ['nome', 'nivel']
 
 class CargoForm(forms.ModelForm):
+    
     skills = forms.ModelMultipleChoiceField(
     queryset=Skill.objects.all(),  # Carrega todas as habilidades
     widget=forms.CheckboxSelectMultiple,  # Ou use outro widget de sua escolha

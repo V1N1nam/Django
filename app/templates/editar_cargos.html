@@ -14,6 +14,7 @@
         <div class="cargoForm">
             <form method="post">
                 <h2>Editar Cargos</h2>
+                <input type="text" id="skillSearch" onkeyup="searchSkills(this, 'id_skills')" placeholder="Digite para buscar...">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <div class="submitButton">
@@ -66,5 +67,6 @@
             </div>
         </div>
     </div>
-    <script src="{% static 'app/js/searchTable.js' %}"></script>
+    <!--<script src="{% static 'app/js/searchTable.js' %}"></script>-->
+    <script src="{% static 'app/js/searchSkills.js' %}"></script>
 {% endblock %}
