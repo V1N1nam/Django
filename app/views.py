@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm as CustomAuthenticationForm
+from django.contrib.auth.models import User
 from .forms import UserRegistrationForm
 from .models import Funcionario, Skill, Cargo, CalendarioItem, Funcionario
 from django.template.loader import render_to_string
@@ -144,6 +145,7 @@ def relatorio_dinamico(request):
     # Filtros
     cargo = request.GET.get('cargo')
     skill = request.GET.get('skill')
+    gestor = request.GET.get('gestor')
 
     funcionarios = Funcionario.objects.all()
 
@@ -151,11 +153,14 @@ def relatorio_dinamico(request):
         funcionarios = funcionarios.filter(cargo=cargo)
     if skill:
         funcionarios = funcionarios.filter(skills__nome=skill)
+    if gestor:
+        funcionarios = funcionarios.filter(gestor__username=gestor)
 
     context = {
         'funcionarios': funcionarios,
         'cargos': Funcionario.objects.values_list('cargo', flat=True).distinct(),
         'skills': Skill.objects.all(),
+        'gestor': User.objects.all(),
     }
 
     return render(request, 'relatorio.html', context)

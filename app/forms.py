@@ -55,9 +55,11 @@ class CustomAuthenticationForm(AuthenticationForm):
     )
 
 class FuncionarioForm(forms.ModelForm):
+    gestor = forms.ModelChoiceField(queryset=User.objects.all(), required=False)
+
     class Meta:
         model = Funcionario
-        fields = ['nome', 'data_nascimento', 'cargo']
+        fields = ['nome', 'data_nascimento', 'cargo', 'gestor']
 
     data_nascimento = forms.DateField(
         input_formats=['%d/%m/%Y'],

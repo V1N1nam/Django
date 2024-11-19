@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.contrib.auth.models import User
 
 class Skill(models.Model):
     nome = models.CharField(max_length=100, unique=True)
@@ -31,6 +32,7 @@ class Funcionario(models.Model):
     nome = models.CharField(max_length=100)
     data_nascimento = models.DateField()
     cargo = models.ForeignKey(Cargo, on_delete=models.PROTECT)
+    gestor = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name="funcionarios")
 
     def __str__(self):
         return self.nome
