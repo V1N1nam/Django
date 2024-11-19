@@ -14,9 +14,9 @@
         <div class="cargoForm">
             <form method="post">
                 <h2>Editar Cargos</h2>
-                <input type="text" id="skillSearch" onkeyup="searchSkills(this, 'id_skills')" placeholder="Digite para buscar...">
                 {% csrf_token %}
                 {{ form.as_p }}
+                <input type="text" id="skillSearch" onkeyup="searchSkills(this, 'id_skills')" placeholder="Pesquisar Skills">
                 <div class="submitButton">
                     <button type="button"class="cancelBtn" onclick="location.href='{% url 'main' %}'">Voltar</button>
                     <button type="submit">Salvar</button>
@@ -24,7 +24,7 @@
             </form>
         </div>
         <div class="cargoTable">
-            <input class="searchBar" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
+            <input class="searchInput" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
 
             <div class="tableDiv">
                 {% if messages %}
@@ -67,6 +67,6 @@
             </div>
         </div>
     </div>
-    <!--<script src="{% static 'app/js/searchTable.js' %}"></script>-->
+    <script src="{% static 'app/js/searchTable.js' %}"></script>
     <script src="{% static 'app/js/searchSkills.js' %}"></script>
 {% endblock %}

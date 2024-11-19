@@ -92,6 +92,17 @@ body {
     border-radius: 30px;
 }
 
+#skillSearch {
+    display: flex;
+    margin-bottom: 20px;
+    font-size: 20px;
+    width: 50%;
+    max-width: 500px;
+    padding: 5px;
+    border: 2px solid rgb(163, 163, 163);
+    border-radius: 10px;
+}
+
 .tableDiv {
     height: 70vh;
     overflow-y: scroll;
