@@ -79,7 +79,7 @@ body {
     background-color: #9e0000;
 }
 
-.searchBar {
+.searchInput {
     display: flex;
     margin: auto;
     margin-bottom: 20px;
