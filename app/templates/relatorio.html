@@ -30,7 +30,7 @@
         <label for="gestor">Gestor:</label>
         <select name="gestor" id="gestor">
             <option value="">Todos</option>
-            {% for gestor in gestor %}
+            {% for gestor in gestores %}
                 <option value="{{ gestor.username }}">{{ gestor.username }}</option>
             {% endfor %}
         </select>

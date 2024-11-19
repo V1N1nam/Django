@@ -150,17 +150,17 @@ def relatorio_dinamico(request):
     funcionarios = Funcionario.objects.all()
 
     if cargo:
-        funcionarios = funcionarios.filter(cargo=cargo)
+        funcionarios = funcionarios.filter(cargo__nome=cargo)
     if skill:
-        funcionarios = funcionarios.filter(skills__nome=skill)
+        funcionarios = funcionarios.filter(cargo__skills__nome=skill)
     if gestor:
         funcionarios = funcionarios.filter(gestor__username=gestor)
 
     context = {
         'funcionarios': funcionarios,
-        'cargos': Funcionario.objects.values_list('cargo', flat=True).distinct(),
+        'cargos': Funcionario.objects.values_list('cargo__nome', flat=True).distinct(),
         'skills': Skill.objects.all(),
-        'gestor': User.objects.all(),
+        'gestores': User.objects.all(),
     }
 
     return render(request, 'relatorio.html', context)
