@@ -11,30 +11,18 @@
 
 {% block content %}
     <div class="mainContainer">
+        <div class="sidebar">
+            <ul>
+                <li><a href="{% url 'editar_skills' %}">Skills</a></li>
+                <li><a href="{% url 'editar_cargos' %}">Cargos</a></li>
+                <li><a href="{% url 'adicionar_funcionario' %}">Funcionários</a></li>
+                <li><a href="{% url 'calendario' %}">Calendário</a></li>
+                <li><a href="{% url 'relatorio_dinamico' %}">Relatório</a></li>
+            </ul>
+        </div>
         <div class="rightContainer">
             <h1>Funcionários</h1>
             <input class="searchBar" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
-
-            <div class="actions">
-                <button class="reportBtn" onclick="location.href='{% url 'relatorio_dinamico' %}'">
-                    Gerar Relatório
-                </button>
-                <button class="calendarBtn" onclick="location.href='{% url 'calendario' %}'">
-                    Calendário
-                </button>
-                
-                <button class="addBtn" onclick="location.href='{% url 'adicionar_funcionario' %}'">
-                    Funcionário
-                </button>
-
-                <button class="editCargoBtn" onclick="location.href='{% url 'editar_cargos' %}'">
-                    Cargo
-                </button>
-
-                <button class="editSkillsBtn" onclick="location.href='{% url 'editar_skills' %}'">
-                    Skills
-                </button>
-            </div>
 
             <div class="divTabela">
                 <table id="funcionariosTabela" class="funcionariosNomes">

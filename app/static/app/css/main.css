@@ -35,37 +35,6 @@ body {
     text-align: center;
 }
 
-/* Estilizando ações */
-.actions {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; /* Aplica o space-between verticalmente */
-    width: 100%;
-    padding: 0 100px;
-    margin: 20px 0;
-}
-
-
-/* Estilizando os botões */
-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #c23131;
-    font-size: 20px;
-    padding: 10px;
-    font-family: Calibri;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    opacity: .8;
-}
-
 .divTabela {
     height: 60%;
     overflow-y: scroll;
@@ -153,6 +122,58 @@ button:hover {
 
 .infoUser:first-child {
     font-weight: bold;
+}
+
+.sidebar {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -180px;
+    width: 200px;
+    height: 100%;
+    border-radius: 0 20px 20px 0;
+    background-color: white;
+    border: 2px solid #333;
+    transition: left 0.3s ease;
+    overflow: hidden;
+}
+
+.sidebar:hover {
+    left: 0; /* Aparece quando o mouse passa */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar ul li a {
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li:hover {
+    background-color: #eee;
+}
+
+/* Conteúdo principal */
+.content {
+    margin-left: 0;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar:hover + .content {
+    margin-left: 200px; /* Move o conteúdo para o lado */
 }
 
 /* Responsividade */
