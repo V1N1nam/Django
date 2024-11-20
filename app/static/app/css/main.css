@@ -36,7 +36,7 @@ body {
 }
 
 .divTabela {
-    height: 60%;
+    height: 70%;
     overflow-y: scroll;
 }
 
@@ -131,7 +131,7 @@ body {
     left: -180px;
     width: 200px;
     height: 100%;
-    border-radius: 0 20px 20px 0;
+    border-radius: 0 10px 10px 0;
     background-color: white;
     border: 2px solid #333;
     transition: left 0.3s ease;
