@@ -19,7 +19,11 @@
                 <li><a href="{% url 'calendario' %}">Calendário</a></li>
                 <li><a href="{% url 'relatorio_dinamico' %}">Relatório</a></li>
             </ul>
+            <div class="sidebarArrow">
+                <img src="{% static 'app/img/right-arrow.png' %}" alt="sidebar arrow">
+            </div>
         </div>
+
         <div class="rightContainer">
             <h1>Funcionários</h1>
             <input class="searchBar" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">

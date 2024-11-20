@@ -128,9 +128,10 @@ body {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    left: -180px;
+    left: -160px;
     width: 200px;
-    height: 100%;
+    height: 95%;
+    padding-right: 40px;
     border-radius: 0 10px 10px 0;
     background-color: white;
     border: 2px solid #333;
@@ -174,6 +175,20 @@ body {
 
 .sidebar:hover + .content {
     margin-left: 200px; /* Move o conteúdo para o lado */
+}
+
+.sidebarArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 160px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sidebarArrow img {
+    width: 25px;
+    height: 25px;
 }
 
 /* Responsividade */
