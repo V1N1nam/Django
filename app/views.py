@@ -8,7 +8,7 @@ from django.template.loader import render_to_string
 from django.http import JsonResponse
 from .forms import CalendarioItemForm
 from django.contrib.auth.decorators import login_required
-from .forms import FuncionarioForm, SkillForm, CargoForm
+from .forms import FuncionarioForm, SkillForm, CargoForm, FindCargoForm
 import io
 from django.http import FileResponse
 from django.template.loader import get_template
@@ -164,6 +164,46 @@ def relatorio_dinamico(request):
     }
 
     return render(request, 'relatorio.html', context)
+
+@login_required(login_url='login')
+def comparar_funcionario_skills(request, funcionario_id):
+    funcionario = get_object_or_404(Funcionario, id=funcionario_id)
+    cargo_atual = funcionario.cargo
+    
+    if request.method == 'POST':
+        form = FindCargoForm(request.POST)
+        if form.is_valid():
+            cargo_promover = form.cleaned_data['cargo_promover']
+
+            funcionario_skills = set(funcionario.cargo.skills.all())
+            cargo_promover_skills = set(cargo_promover.skills.all())
+
+            skills_faltantes = cargo_promover_skills - funcionario_skills
+
+            if not skills_faltantes:
+                messages.warning(request, '• Nenhuma skill faltante para a promoção.')
+                
+            context = {
+                'funcionario': funcionario,
+                'cargo_atual': funcionario.cargo,
+                'cargo_promover': cargo_promover,
+                'skills_faltantes': skills_faltantes,
+                'form': form,
+                'skills': funcionario_skills
+            }
+
+            return render(request, 'skills.html', context)
+    else:
+        form = FindCargoForm()
+    
+    context = {
+        'form': form,
+        'funcionario': funcionario,
+        'cargo_atual': cargo_atual,
+        'skills': cargo_atual.skills.all()
+    }
+    
+    return render(request, 'skills.html', context)
 
 @login_required(login_url='login')
 def calendario_eventos(request):

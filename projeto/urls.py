@@ -15,6 +15,7 @@ urlpatterns = [
     path('remove_funcionario/<int:funcionario_id>/', views.remove_funcionario, name='remove_funcionario'),
     path('funcionario/<int:funcionario_id>/', views.funcionario_detalhes, name='funcionario_detail'),  # Corrigido para nome correto da URL)
     path('funcionario/<int:funcionario_id>/add_skill/', views.add_skill, name='add_skill'),  # Adiciona skill ao funcionário
+    path('comparar_funcionario_skills/<int:funcionario_id>/', views.comparar_funcionario_skills, name='comparar_funcionario_skills'),
     path('relatorio/', views.relatorio_dinamico, name='relatorio_dinamico'),
     path('calendario/eventos/', views.calendario_eventos, name='calendario_eventos'),
     path('calendario/', views.calendarioView, name='calendario'),

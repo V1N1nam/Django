@@ -71,8 +71,7 @@ class SkillForm(forms.ModelForm):
         model = Skill
         fields = ['nome', 'nivel']
 
-class CargoForm(forms.ModelForm):
-    
+class CargoForm(forms.ModelForm):    
     skills = forms.ModelMultipleChoiceField(
     queryset=Skill.objects.all(),  # Carrega todas as habilidades
     widget=forms.CheckboxSelectMultiple,  # Ou use outro widget de sua escolha
@@ -83,7 +82,12 @@ class CargoForm(forms.ModelForm):
         model = Cargo
         fields = ['nome', 'skills']
 
-
+class FindCargoForm(forms.Form):
+    cargo_promover = forms.ModelChoiceField(
+        queryset=Cargo.objects.all(),
+        label="Selecione o cargo para comparar",
+        widget=forms.Select(attrs={'class': 'form-control'}),
+    )
 
 class CalendarioItemForm(forms.ModelForm):
     class Meta:
