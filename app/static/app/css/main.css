@@ -133,6 +133,7 @@ body {
     height: 95%;
     padding-right: 40px;
     border-radius: 0 10px 10px 0;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     background-color: white;
     border: 3px solid #333;
     border-left: none;
