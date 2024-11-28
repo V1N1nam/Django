@@ -9,6 +9,12 @@ class UserRegistrationForm(UserCreationForm):
     widget=forms.TextInput(attrs={'class': 'form-control', 'id': 'id_username', 'placeholder': 'Digite seu nome de usuário'}),
     label='Nome de usuário'
     )
+
+    email = forms.EmailField(
+        widget=forms.EmailInput(attrs={'class': 'form-control', 'id': 'id_email', 'placeholder': 'Digite seu email'}),
+        label='Email'
+    )
+
     password1 = forms.CharField(
         label='Password',
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'id': 'id_password', 'placeholder': 'Crie uma senha'}),
@@ -34,6 +40,13 @@ class UserRegistrationForm(UserCreationForm):
 
         return username
     
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        if User.objects.filter(email=email).exists():
+            raise ValidationError('Email ja cadastrado.')
+        
+        return email
+    
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
         password2 = self.cleaned_data.get("password2")
@@ -43,6 +56,13 @@ class UserRegistrationForm(UserCreationForm):
                 raise ValidationError("As senhas não são iguais.")
             
         return password2
+    
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.email = self.cleaned_data['email']
+        if commit:
+            user.save()
+        return user
 
 class CustomAuthenticationForm(AuthenticationForm):
     username = forms.CharField(

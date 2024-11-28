@@ -136,3 +136,11 @@ DATE_FORMAT = 'd/m/Y'  # Exemplo: 01/01/2024
 # Definir o formato de data e hora padrão
 DATETIME_FORMAT = 'd/m/Y H:i:s'  # Exemplo: 01/01/2024 12:30:40
 
+SENHA_DE_APP = os.getenv('APP_PASSWORD')
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'b54314409@gmail.com'  # Conta criada
+EMAIL_HOST_PASSWORD = SENHA_DE_APP     # Senha de App configurada

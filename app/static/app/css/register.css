@@ -20,7 +20,7 @@ a{
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     width: 480px;
-    height: 600px; /* Deixe a altura do conteúdo determinar a altura do body */
+    height: 720px; /* Deixe a altura do conteúdo determinar a altura do body */
     background-color: white;
     padding: 20px;
     
@@ -51,7 +51,7 @@ a{
     height: 50%;
 }
 
-input[type="text"], input[type="password"]{
+input[type="text"], input[type="email"], input[type="password"] {
     width: 300px;
     height: 20px;
     padding: 15px 15px;
@@ -68,7 +68,7 @@ input[type="text"], input[type="password"]{
     margin-left: -3px;
 }
 
-.formUser, .formPassOne, .formPassTwo{
+.formUser, .formEmail, .formPassOne, .formPassTwo{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,7 +76,7 @@ input[type="text"], input[type="password"]{
     margin-top: 20px;
 }
 
-.formUser p, .formPassOne p, .formPassTwo p{
+.formUser p, .formEmail p, .formPassOne p, .formPassTwo p{
     margin: 0;
     margin-top: 10px;
 }

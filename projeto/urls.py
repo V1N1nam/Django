@@ -8,6 +8,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),  # URL para a administração do Django
     path('', views.minha_view, name='index'),  # Mapeia a URL raiz para a view minha_view
     path('login/', auth_views.LoginView.as_view(template_name='index.html'), name='login'),  # URL para login
+    path('password_reset/', auth_views.PasswordResetView.as_view(template_name='registration/password_reset.html'), name='password_reset'),
+    path('password_reset_done/', auth_views.PasswordResetDoneView.as_view(template_name='registration/password_reset_sent.html'), name='password_reset_done'),
+    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="registration/password_reset_new.html"), name='password_reset_confirm'),
+    path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name="registration/password_reset_changed.html"), name='password_reset_complete'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),  # URL para logout
     path('register/', views.register, name='register'),  # URL para registro de novos usuários
     path('main/', views.lista_funcionarios, name='main'),  # Corrigido para lista_funcionarios
